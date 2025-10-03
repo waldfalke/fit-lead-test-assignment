@@ -110,12 +110,7 @@ export const Card = React.forwardRef<HTMLDivElement, CardProps>(
     // If href provided, render as Link
     if (href) {
       return (
-        <Link
-          href={href}
-          className={cardClasses}
-          ref={ref as React.Ref<HTMLAnchorElement>}
-          {...rest}
-        >
+        <Link href={href} className={cardClasses} {...rest}>
           {cardContent}
         </Link>
       );
@@ -138,11 +133,7 @@ export const Card = React.forwardRef<HTMLDivElement, CardProps>(
 
     // Default: render as div
     return (
-      <div
-        className={cardClasses}
-        ref={ref}
-        {...rest}
-      >
+      <div className={cardClasses} ref={ref} {...rest}>
         {cardContent}
       </div>
     );
