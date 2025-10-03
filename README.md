@@ -5,8 +5,8 @@
 ## 🌐 Links
 
 - **GitHub Repository:** https://github.com/waldfalke/fit-lead-test-assignment
-- **Live Demo (Vercel):** 🔜 Deploying...
-- **Storybook:** 🔜 Will be deployed
+- **Live Demo (Vercel):** https://fit-lead-test-assignment.vercel.app
+- **Storybook:** 🚧 In progress (будет добавлен после создания компонентов)
 
 ## 🎯 AI Workflow
 
