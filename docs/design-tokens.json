@@ -1,5 +1,6 @@
 {
   "$schema": "https://tr.designtokens.org/format-module/spec/",
+  "$description": "Fit&Lead Design Tokens - Reference documentation. Source of truth: app/globals.css (@theme directive for Tailwind v4)",
   "color": {
     "brand": {
       "primary": {
@@ -134,7 +135,7 @@
     "lg": { "$type": "dimension", "$value": "0.5rem", "$description": "8px - extracted from --bs-border-radius-lg" },
     "xl": { "$type": "dimension", "$value": "0.625rem", "$description": "10px - extracted from --bs-border-radius-xl" },
     "2xl": { "$type": "dimension", "$value": "2rem", "$description": "32px - extracted from --bs-border-radius-xxl" },
-    "full": { "$type": "dimension", "$value": "50rem", "$description": "Pill shape" }
+    "full": { "$type": "dimension", "$value": "9999px", "$description": "Pill shape - для кнопок/бэйджей" }
   },
   "boxShadow": {
     "sm": {
