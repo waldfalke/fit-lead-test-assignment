@@ -1,6 +1,7 @@
 'use client';
 
 import { Button } from '@/components/Button';
+import { Card } from '@/components/Card';
 
 /**
  * UI Kit Page - Design System Showcase
@@ -112,6 +113,86 @@ export default function UIKitPage() {
                 >
                   With Icon Right
                 </Button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ============================================
+            Cards Section
+            ============================================ */}
+        <section>
+          <h2 className="text-3xl font-bold text-[--color-text-primary] mb-6">
+            Cards
+          </h2>
+          <p className="text-lg text-[--color-text-secondary] mb-8">
+            Flexible content cards for benefits, features, and content grids
+          </p>
+
+          <div className="space-y-8">
+            {/* Variants */}
+            <div>
+              <h3 className="text-xl font-semibold text-[--color-text-primary] mb-4">
+                Variants
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <Card
+                  variant="default"
+                  icon={
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" className="text-primary">
+                      <rect width="48" height="48" rx="8" fill="currentColor" opacity="0.1" />
+                      <path d="M24 14L28 22H20L24 14Z M24 26L20 34H28L24 26Z" fill="currentColor" />
+                    </svg>
+                  }
+                  title="Default Card"
+                  description="Subtle background for content grids and feature showcases."
+                />
+                <Card
+                  variant="elevated"
+                  icon={
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" className="text-primary">
+                      <path d="M24 8C24 8 8 18 8 28C8 34 12 38 16 38C19 38 22 36 24 33C26 36 29 38 32 38C36 38 40 34 40 28C40 18 24 8 24 8Z" fill="currentColor" opacity="0.2" stroke="currentColor" strokeWidth="2" />
+                    </svg>
+                  }
+                  title="Elevated Card"
+                  description="Shadow effect provides visual prominence and depth."
+                />
+                <Card
+                  variant="outlined"
+                  icon={
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" className="text-primary">
+                      <path d="M24 8L28 20L40 20L30 28L34 40L24 32L14 40L18 28L8 20L20 20L24 8Z" fill="currentColor" opacity="0.2" stroke="currentColor" strokeWidth="2" />
+                    </svg>
+                  }
+                  title="Outlined Card"
+                  description="Border style for minimal look on colored backgrounds."
+                />
+              </div>
+            </div>
+
+            {/* Interactive Cards */}
+            <div>
+              <h3 className="text-xl font-semibold text-[--color-text-primary] mb-4">
+                Interactive Cards
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <Card
+                  variant="elevated"
+                  icon={
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" className="text-primary">
+                      <rect width="48" height="48" rx="8" fill="currentColor" opacity="0.1" />
+                      <path d="M24 14L28 22H20L24 14Z M24 26L20 34H28L24 26Z" fill="currentColor" />
+                    </svg>
+                  }
+                  title="Clickable Card"
+                  description="Hover to see interactive effects. Cards can be links or buttons."
+                  onClick={() => alert('Card clicked!')}
+                />
+                <Card
+                  variant="default"
+                  title="Without Icon"
+                  description="Cards work great without icons too, focusing on text content."
+                />
               </div>
             </div>
           </div>
