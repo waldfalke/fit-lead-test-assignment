@@ -241,6 +241,11 @@ export const ShortContent: Story = {
 // ============================================
 
 export const AllVariants: Story = {
+  args: {
+    variant: 'default',
+    title: 'Sample Card',
+    description: 'This story shows all variants',
+  },
   render: () => (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-6xl">
       <Card
@@ -273,6 +278,11 @@ export const AllVariants: Story = {
 // ============================================
 
 export const BenefitsGrid: Story = {
+  args: {
+    variant: 'default',
+    title: 'Benefits Example',
+    description: 'Grid layout for benefits section',
+  },
   render: () => (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-6xl">
       <Card

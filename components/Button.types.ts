@@ -52,6 +52,11 @@ export interface ButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement
   ariaLabel?: string;
 
   /**
+   * Link href - if provided, renders as Next.js Link
+   */
+  href?: string;
+
+  /**
    * Button content (text, icons, etc.)
    */
   children?: ReactNode;

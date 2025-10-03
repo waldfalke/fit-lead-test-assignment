@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { ButtonProps } from './Button.types';
 
 /**
@@ -26,6 +27,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       onClick,
       type = 'button',
       ariaLabel,
+      href,
       children,
       className = '',
       ...rest
@@ -134,18 +136,9 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       onClick?.(e);
     };
 
-    return (
-      <button
-        ref={ref}
-        type={type}
-        className={buttonClasses}
-        onClick={handleClick}
-        disabled={disabled || loading}
-        aria-label={ariaLabel}
-        aria-busy={loading}
-        aria-disabled={disabled || loading}
-        {...rest}
-      >
+    // Button content
+    const buttonContent = (
+      <>
         {loading && (
           <svg
             className="animate-spin h-4 w-4"
@@ -172,6 +165,32 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         {!loading && iconLeft && <span aria-hidden="true">{iconLeft}</span>}
         {children}
         {!loading && iconRight && <span aria-hidden="true">{iconRight}</span>}
+      </>
+    );
+
+    // If href provided, render as Link
+    if (href && !disabled && !loading) {
+      return (
+        <Link href={href} className={buttonClasses} aria-label={ariaLabel}>
+          {buttonContent}
+        </Link>
+      );
+    }
+
+    // Default: render as button
+    return (
+      <button
+        ref={ref}
+        type={type}
+        className={buttonClasses}
+        onClick={handleClick}
+        disabled={disabled || loading}
+        aria-label={ariaLabel}
+        aria-busy={loading}
+        aria-disabled={disabled || loading}
+        {...rest}
+      >
+        {buttonContent}
       </button>
     );
   }
