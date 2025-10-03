@@ -268,7 +268,7 @@ export default function DesignSystemPage() {
                   Public Sans — The quick brown fox jumps over the lazy dog
                 </p>
                 <p className="font-mono text-xs text-[--color-text-secondary] mt-2">
-                  font-family: "Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif
+                  font-family: &quot;Public Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif
                 </p>
               </div>
               <div>
@@ -277,7 +277,7 @@ export default function DesignSystemPage() {
                   SFMono-Regular — The quick brown fox jumps
                 </p>
                 <p className="font-mono text-xs text-[--color-text-secondary] mt-2">
-                  font-family: "SFMono-Regular", Menlo, Monaco, Consolas, monospace
+                  font-family: &quot;SFMono-Regular&quot;, Menlo, Monaco, Consolas, monospace
                 </p>
               </div>
             </div>

@@ -113,7 +113,7 @@ export const Card = React.forwardRef<HTMLDivElement, CardProps>(
         <Link
           href={href}
           className={cardClasses}
-          ref={ref as any}
+          ref={ref as React.Ref<HTMLAnchorElement>}
           {...rest}
         >
           {cardContent}
@@ -128,7 +128,7 @@ export const Card = React.forwardRef<HTMLDivElement, CardProps>(
           type="button"
           onClick={onClick}
           className={cardClasses}
-          ref={ref as any}
+          ref={ref as React.Ref<HTMLButtonElement>}
           {...rest}
         >
           {cardContent}
