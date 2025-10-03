@@ -31,7 +31,7 @@
         "dark": { "$type": "color", "$value": "#0A0A0A" }
       },
       "surface": {
-        "light": { "$type": "color", "$value": "#F8F8F8" },
+        "light": { "$type": "color", "$value": "#F5F7FA", "$description": "Холодный светло-голубой surface" },
         "dark": { "$type": "color", "$value": "#1A1A1A" }
       },
       "text": {
@@ -40,18 +40,43 @@
           "dark": { "$type": "color", "$value": "#F5F5F5" }
         },
         "secondary": {
-          "light": { "$type": "color", "$value": "#666666" },
+          "light": { "$type": "color", "$value": "#5A5A5A", "$description": "Теплый серый, не чистый" },
           "dark": { "$type": "color", "$value": "#AAAAAA" }
+        },
+        "onAccent": { 
+          "$type": "color", 
+          "$value": "#0A0A0A", 
+          "$description": "Почти черный текст на желтом (#FBEA1B), высокий контраст" 
+        },
+        "onPrimary": { 
+          "$type": "color", 
+          "$value": "#FFFFFF", 
+          "$description": "Белый текст на бирюзовом (#00484F)" 
         }
       },
       "border": {
-        "light": { "$type": "color", "$value": "#E5E5E5" },
+        "light": { "$type": "color", "$value": "#E6EEF0", "$description": "Холодный border" },
         "dark": { "$type": "color", "$value": "#333333" }
       },
       "success": { "$type": "color", "$value": "#28c76f" },
       "warning": { "$type": "color", "$value": "#ff9f43" },
       "danger": { "$type": "color", "$value": "#ff4c51" },
       "info": { "$type": "color", "$value": "#00bad1" }
+    },
+    "interactive": {
+      "primary": {
+        "default": { "$type": "color", "$value": "#00484F" },
+        "hover": { "$type": "color", "$value": "#003A3F" }
+      },
+      "accent": {
+        "default": { "$type": "color", "$value": "#FBEA1B" },
+        "hover": { "$type": "color", "$value": "#E8D818" }
+      },
+      "focus": { 
+        "$type": "color", 
+        "$value": "rgba(0, 72, 79, 0.4)", 
+        "$description": "Focus ring color based on primary" 
+      }
     },
     "gradient": {
       "brand": {

@@ -7,10 +7,12 @@
 :root {
   /* Light Theme */
   --color-background: #FFFFFF;
-  --color-surface: #F8F8F8;
+  --color-surface: #F5F7FA;  /* Холодный светло-голубой */
   --color-text-primary: #1A1A1A;
-  --color-text-secondary: #666666;
-  --color-border: #E5E5E5;
+  --color-text-secondary: #5A5A5A;  /* Теплый серый, не чистый */
+  --color-text-on-accent: #0A0A0A;  /* Почти черный на желтом */
+  --color-text-on-primary: #FFFFFF;  /* Белый на бирюзовом */
+  --color-border: #E6EEF0;  /* Холодный border */
 }
 
 .dark {
@@ -79,6 +81,11 @@
   --color-danger: #ff4c51;
   --color-info: #00bad1;
 
+  /* Interactive States */
+  --color-primary-hover: #003A3F;
+  --color-accent-hover: #E8D818;
+  --color-focus: rgba(0, 72, 79, 0.4);
+
   /* ==========================================
      Typography (from Fit&Lead core.css)
      ========================================== */
@@ -124,7 +131,7 @@
   --radius-lg: 0.5rem;    /* 8px */
   --radius-xl: 0.625rem;  /* 10px */
   --radius-2xl: 2rem;     /* 32px */
-  --radius-full: 50rem;   /* pill */
+  --radius-full: 9999px;  /* pill - для кнопок/бэйджей */
 
   /* ==========================================
      Shadows (from --bs-box-shadow-*)
