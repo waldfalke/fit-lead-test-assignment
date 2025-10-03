@@ -1,36 +1,133 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+{{ ... }}
 
-## Getting Started
+Тестовое задание: мини-сайт из двух страниц, созданный через AI-инструменты с использованием Contract-Driven Development подхода.
 
-First, run the development server:
+## 🎯 AI Workflow
+
+- **Инструменты:** Claude Code, Cursor AI, v0.dev (планируется)
+- **Подход:** Contract-Driven AI Development (CDAD) - каждый компонент будет генерироваться AI на основе детального контракта
+- **Стратегия:** Покомпонентная разработка с отдельными коммитами для демонстрации итераций
+
+## 🏗️ Архитектура
+
+**Переиспользуемые компоненты:**
+- **Button** (CONTRACT-BUTTON-001): 7 вариантов (primary, secondary, sizes, states)
+- **Card** (CONTRACT-CARD-001): 3 варианта (default, elevated, outlined)
+- Оба компонента используются на Landing странице И в UI Kit
+
+**Секции страницы:**
+- Hero - главный блок с CTA
+- BenefitsSection - grid из Card компонентов
+- CTASection - повторный призыв к действию
+- Footer - навигация и контакты Fit&Lead
+
+## 🎨 Design System
+
+**Цвета (Fit&Lead brand):**
+- Primary: `#00484F` (темный бирюзовый)
+- Accent: `#FBEA1B` (желтый)
+- Neutrals: 50-900 шкала серых
+
+**Spacing Scale:**
+- xs: 8px, sm: 16px, md: 24px, lg: 32px, xl: 48px, 2xl: 64px
+
+**Typography:**
+- Responsive: от 14px (small) до 64px (h1)
+- System fonts для быстрой загрузки
+
+**Темы:**
+- Light/Dark mode с переключением
+- CSS variables для runtime switching
+- Все компоненты theme-aware
+
+## 💡 Текущий статус
+
+**✅ Завершено:**
+1. **Setup проекта** - Next.js 15 + Tailwind CSS v4 + Storybook 9
+2. **Design tokens** - Fit&Lead бренд-цвета (#00484F, #FBEA1B), spacing scale, typography
+3. **Theme structure** - CSS variables готовы для light/dark mode
+4. **Storybook config** - решена проблема совместимости PostCSS (array → object format)
+
+**🔄 В процессе:**
+- Генерация компонентов через AI на основе контрактов
+- Покомпонентная разработка с Git коммитами
+
+## 🚀 Запуск проекта
 
 ```bash
+# Установка зависимостей
+npm install
+
+# Запуск dev сервера
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Запуск Storybook
+npm run storybook
+
+# Production build
+npm run build
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Откройте [http://localhost:3000](http://localhost:3000) для Landing page
+Storybook доступен на [http://localhost:6006](http://localhost:6006)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📦 Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Framework:** Next.js 15 (App Router)
+- **Styling:** Tailwind CSS v4
+- **Language:** TypeScript
+- **Component Docs:** Storybook 9
+- **Testing:** Vitest (configured, not yet implemented)
+- **Deployment:** Vercel (planned)
 
-## Learn More
+## 📁 Структура проекта
 
-To learn more about Next.js, take a look at the following resources:
+```
+fit-lead-test-assignment/
+├── app/
+│   ├── page.tsx                 # Landing page
+│   ├── ui-kit/
+│   │   └── page.tsx             # UI Kit showcase
+│   ├── layout.tsx
+│   └── globals.css              # Design tokens + theme variables
+├── components/
+│   ├── Button.tsx               # Reusable Button component
+│   ├── Card.tsx                 # Reusable Card component
+│   └── sections/
+│       ├── Hero.tsx
+│       ├── BenefitsSection.tsx
+│       ├── CTASection.tsx
+│       └── Footer.tsx
+├── context/
+│   └── ThemeContext.tsx         # Theme state management
+├── providers/
+│   └── ThemeProvider.tsx        # Theme provider wrapper
+├── stories/                     # Storybook stories
+├── .storybook/                  # Storybook config
+└── Contracts/                   # 13 YAML contracts (reference)
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📋 Contracts (CDAD Approach)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Проект использует 13 детальных контрактов в формате YAML:
+- **Meta:** METACONTRACT (правила для всех контрактов)
+- **Infrastructure:** TOKENS, TAILWIND, THEME, STORYBOOK
+- **Components:** BUTTON, CARD
+- **Sections:** HERO, BENEFITS, CTA, FOOTER
+- **Pages:** LANDING-PAGE, UI-KIT-PAGE
 
-## Deploy on Vercel
+Каждый контракт содержит: API, props, invariants, anti-patterns, acceptance criteria
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🎓 Цели проекта
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. 🎯 **Компонентный подход** - переиспользование всех компонентов на обеих страницах (Button, Card, секции)
+2. 🎯 **Design System** - централизованные токены, консистентные стили
+3. 🎯 **AI-first Development** - генерация кода через AI на основе детальных контрактов
+4. 🎯 **Git History** - покомпонентные коммиты демонстрируют итерации с AI
+5. 🎯 **Theme Support** - light/dark mode с переключением
+6. 🎯 **Responsive Design** - mobile-first, адаптивность на всех экранах
+
+---
+
+Создано для Fit&Lead тестового задания | 2025
