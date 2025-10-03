@@ -1,5 +1,4 @@
 {
-  "$schema": "https://tr.designtokens.org/format-module/spec/",
   "$description": "Fit&Lead Design Tokens - Reference documentation. Source of truth: app/globals.css (@theme directive for Tailwind v4)",
   "color": {
     "brand": {
