@@ -52,26 +52,28 @@ export const CTA: React.FC<CTAProps> = ({
   const padding = size === 'compact' ? 'py-[var(--spacing-12)]' : 'py-[var(--spacing-16)]'; // 48px или 64px
 
   return (
-    <section className={`${backgroundStyles[variant]} ${padding}`}>
-      <div className="container mx-auto px-[var(--spacing-8)]"> {/* 32px */}
-        <div className="max-w-4xl mx-auto text-center space-y-[var(--spacing-12)]"> {/* 48px */}
-          <h2 className={`text-3xl md:text-4xl lg:text-5xl font-bold ${textColor}`}>
-            {title}
-          </h2>
-          {description && (
-            <p className={`text-lg md:text-xl ${subtextColor} max-w-2xl mx-auto`}>
-              {description}
-            </p>
-          )}
-          <div className="flex gap-[var(--spacing-6)] justify-center"> {/* 24px */}
-            <Button
-              variant={variant === 'accent' ? 'primary' : variant === 'subtle' ? 'primary' : 'tonal'}
-              size="lg"
-              href={ctaHref}
-              onClick={onCtaClick}
-            >
-              {ctaText}
-            </Button>
+    <section className="px-[var(--spacing-8)] py-[var(--spacing-8)]">
+      <div className={`${backgroundStyles[variant]} ${padding} rounded-3xl`}>
+        <div className="container mx-auto px-[var(--spacing-8)]"> {/* 32px */}
+          <div className="max-w-4xl mx-auto text-center space-y-[var(--spacing-12)]"> {/* 48px */}
+            <h2 className={`text-3xl md:text-4xl lg:text-5xl font-bold ${textColor}`}>
+              {title}
+            </h2>
+            {description && (
+              <p className={`text-lg md:text-xl ${subtextColor} max-w-2xl mx-auto`}>
+                {description}
+              </p>
+            )}
+            <div className="flex gap-[var(--spacing-6)] justify-center"> {/* 24px */}
+              <Button
+                variant={variant === 'accent' ? 'primary' : variant === 'subtle' ? 'primary' : 'tonal'}
+                size="lg"
+                href={ctaHref}
+                onClick={onCtaClick}
+              >
+                {ctaText}
+              </Button>
+            </div>
           </div>
         </div>
       </div>

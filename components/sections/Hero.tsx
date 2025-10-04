@@ -35,10 +35,11 @@ export const Hero: React.FC<HeroProps> = ({
   };
 
   return (
-    <section
-      className={`relative min-h-[80vh] max-h-[90vh] flex items-center ${backgroundStyles[backgroundVariant]}`}
-    >
-      <div className="container mx-auto px-[var(--spacing-8)] py-[var(--spacing-16)]"> {/* 32px 64px */}
+    <section className="px-[var(--spacing-8)] py-[var(--spacing-8)]">
+      <div
+        className={`relative min-h-[80vh] max-h-[90vh] flex items-center rounded-3xl ${backgroundStyles[backgroundVariant]}`}
+      >
+        <div className="container mx-auto px-[var(--spacing-8)] py-[var(--spacing-16)]"> {/* 32px 64px */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-[var(--spacing-12)] items-center"> {/* 48px */}
           {/* Content */}
           <div className="space-y-[var(--spacing-12)] text-center lg:text-left"> {/* 48px */}
@@ -87,6 +88,7 @@ export const Hero: React.FC<HeroProps> = ({
             </div>
           )}
         </div>
+      </div>
       </div>
     </section>
   );
