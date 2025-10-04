@@ -1,12 +1,13 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { SITE_NAVIGATION, SOCIAL_LINKS, LEGAL_LINKS, COMPANY_INFO } from '@/config/navigation';
 
 /**
  * Footer Component
  * 
  * Simplified footer in Fit&Lead brand colors: logo, navigation, copyright, and social links.
- * Uses same navigation as Header for consistency.
+ * Uses same navigation as Header for consistency (from centralized config).
  * 
  * @example
  * ```tsx
@@ -15,13 +16,6 @@ import Image from 'next/image';
  */
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
-  
-  // Same navigation as Header
-  const navigation = [
-    { label: 'Главная', href: '/' },
-    { label: 'UI Kit', href: '/ui-kit' },
-    { label: 'Design System', href: '/design-system' },
-  ];
 
   return (
     <footer className="bg-[var(--color-surface)] border-t border-[var(--color-border)]">
@@ -44,7 +38,7 @@ export const Footer: React.FC = () => {
 
           {/* Navigation - Same as Header */}
           <nav className="flex justify-center gap-8" aria-label="Footer navigation">
-            {navigation.map((item) => (
+            {SITE_NAVIGATION.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
@@ -58,7 +52,7 @@ export const Footer: React.FC = () => {
           {/* Social Links - Mobile: Center, Desktop: Right */}
           <div className="flex gap-4 items-center justify-center md:justify-end">
             <a
-              href="https://vk.com/affiliateclub"
+              href={SOCIAL_LINKS.vk}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="VKontakte"
@@ -72,7 +66,7 @@ export const Footer: React.FC = () => {
               />
             </a>
             <a
-              href="https://t.me/FitnessAffiliate"
+              href={SOCIAL_LINKS.telegram}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Telegram"
@@ -91,21 +85,18 @@ export const Footer: React.FC = () => {
         {/* Copyright & Legal Links */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 border-t border-[var(--color-border)]">
           <p className="text-xs text-[var(--color-text-secondary)] text-center md:text-left">
-            © {currentYear} ООО «ЛИДЕРЫ МНЕНИЙ» ИНН 6685214668 Все права защищены
+            © {currentYear} {COMPANY_INFO.name} ИНН {COMPANY_INFO.inn} Все права защищены
           </p>
           <div className="flex flex-col md:flex-row gap-3 md:gap-6 text-xs text-center md:text-right">
-            <Link
-              href="/privacy"
-              className="text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] hover:underline transition-colors"
-            >
-              Политика обработки персональных данных
-            </Link>
-            <Link
-              href="/info"
-              className="text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] hover:underline transition-colors"
-            >
-              Информация о продукте
-            </Link>
+            {LEGAL_LINKS.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] hover:underline transition-colors"
+              >
+                {link.label}
+              </Link>
+            ))}
           </div>
         </div>
       </div>

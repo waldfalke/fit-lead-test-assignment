@@ -3,6 +3,7 @@
 import { Header } from '@/components/Header';
 import { ThemeProvider } from '@/providers/ThemeProvider';
 import { useTheme } from '@/hooks/useTheme';
+import { SITE_NAVIGATION } from '@/config/navigation';
 
 /**
  * Header wrapper component that uses theme hook
@@ -11,15 +12,9 @@ import { useTheme } from '@/hooks/useTheme';
 function HeaderWithTheme() {
   const { theme, setTheme } = useTheme();
 
-  const navigation = [
-    { label: 'Главная', href: '/', active: false },
-    { label: 'UI Kit', href: '/ui-kit', active: false },
-    { label: 'Design System', href: '/design-system', active: false },
-  ];
-
   return (
     <Header
-      navigation={navigation}
+      navigation={SITE_NAVIGATION}
       currentTheme={theme}
       onThemeToggle={setTheme}
     />
