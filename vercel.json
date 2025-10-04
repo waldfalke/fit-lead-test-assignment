@@ -1,0 +1,20 @@
+{
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
+  "installCommand": "npm install",
+  "framework": "nextjs",
+  "git": {
+    "deploymentEnabled": {
+      "main": true
+    }
+  },
+  "github": {
+    "enabled": true,
+    "autoAlias": true,
+    "silent": false
+  },
+  "regions": ["fra1"],
+  "env": {
+    "NEXT_PUBLIC_SITE_URL": "https://fit-lead-test-assignment.vercel.app"
+  }
+}
