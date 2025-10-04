@@ -29,7 +29,7 @@ export const Hero: React.FC<HeroProps> = ({
 }) => {
   // Background styles based on variant
   const backgroundStyles: Record<typeof backgroundVariant, string> = {
-    gradient: 'bg-gradient-to-br from-accent via-accent/80 to-primary',
+    gradient: 'bg-gradient-to-br from-[var(--color-accent)] via-[var(--color-accent)]/80 to-[var(--color-primary)]',
     solid: 'bg-primary',
     image: 'bg-primary',
   };
@@ -38,17 +38,17 @@ export const Hero: React.FC<HeroProps> = ({
     <section
       className={`relative min-h-[80vh] max-h-[90vh] flex items-center ${backgroundStyles[backgroundVariant]}`}
     >
-      <div className="container mx-auto px-6 py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="container mx-auto px-[var(--spacing-8)] py-[var(--spacing-16)]"> {/* 32px 64px */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-[var(--spacing-12)] items-center"> {/* 48px */}
           {/* Content */}
-          <div className="space-y-8 text-center lg:text-left">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[--color-text-on-accent] leading-tight">
+          <div className="space-y-[var(--spacing-12)] text-center lg:text-left"> {/* 48px */}
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[var(--color-text-on-accent)] leading-tight">
               {title}
             </h1>
-            <p className="text-lg md:text-xl lg:text-2xl text-[--color-text-on-accent]/90 max-w-2xl mx-auto lg:mx-0">
+            <p className="text-lg md:text-xl lg:text-2xl text-[var(--color-text-on-accent)]/90 max-w-2xl mx-auto lg:mx-0">
               {subtitle}
             </p>
-            <div className="flex gap-4 justify-center lg:justify-start">
+            <div className="flex gap-[var(--spacing-6)] justify-center lg:justify-start"> {/* 24px */}
               <Button
                 variant="primary"
                 size="lg"
@@ -82,7 +82,7 @@ export const Hero: React.FC<HeroProps> = ({
                 </div>
                 {/* Decorative elements */}
                 <div className="absolute -top-4 -right-4 w-24 h-24 bg-white/10 rounded-full blur-xl" />
-                <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-primary/30 rounded-full blur-2xl" />
+                <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-[var(--color-primary)]/30 rounded-full blur-2xl" />
               </div>
             </div>
           )}
@@ -90,8 +90,8 @@ export const Hero: React.FC<HeroProps> = ({
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:block">
-        <div className="flex flex-col items-center gap-2 text-[--color-text-on-accent]/60">
+      <div className="absolute bottom-[var(--spacing-12)] left-1/2 -translate-x-1/2 hidden md:block"> {/* 48px */}
+        <div className="flex flex-col items-center gap-[var(--spacing-4)] text-[var(--color-text-on-accent)]/60"> {/* 16px */}
           <span className="text-sm">Прокрутите вниз</span>
           <svg
             className="w-6 h-6 animate-bounce"

@@ -1,0 +1,32 @@
+name: Tokens Validation & Smoke
+
+on:
+  pull_request:
+    paths:
+      - 'design-tokens/**'
+      - 'app/**'
+      - 'scripts/**'
+      - '.github/workflows/**'
+  push:
+    branches: [ main ]
+
+jobs:
+  tokens-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      - name: Install
+        run: npm ci
+      - name: Generate tokens -> globals.generated.css
+        run: node scripts/generate-tokens.js
+      - name: Check generated file exists
+        run: |
+          if [ ! -f app/globals.generated.css ]; then echo "globals.generated.css not found" && exit 1; fi
+      - name: Build (smoke)
+        run: npm run build --if-present
+      - name: Storybook build (if available)
+        run: npm run build-storybook --if-present

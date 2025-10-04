@@ -40,14 +40,14 @@ export interface SocialLink {
  */
 export interface FooterProps {
   /**
-   * Navigation link groups
+   * Navigation links (can be flat array or grouped sections)
    */
-  navigation: NavigationSection[];
+  navigation: NavigationLink[] | NavigationSection[];
 
   /**
-   * Contact information
+   * Contact information (optional)
    */
-  contacts: ContactInfo;
+  contacts?: ContactInfo;
 
   /**
    * Social media links (optional)

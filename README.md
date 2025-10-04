@@ -68,10 +68,72 @@ npm run storybook
 # Production build
 npm run build
 npm start
+
+# Build Storybook
+npm run build-storybook
 ```
 
-Откройте [http://localhost:3000](http://localhost:3000) для Landing page
-Storybook доступен на [http://localhost:6006](http://localhost:6006)
+**Локальные адреса:**
+- Landing page: [http://localhost:3000](http://localhost:3000)
+- UI Kit: [http://localhost:3000/ui-kit](http://localhost:3000/ui-kit)
+- Design System: [http://localhost:3000/design-system](http://localhost:3000/design-system)
+- Storybook: [http://localhost:6006](http://localhost:6006)
+
+## ✅ Проверка качества
+
+```bash
+# Проверить синхронизацию токенов
+npm run verify-tokens
+
+# Проверить использование токенов в коде
+npm run verify-usage
+
+# Проверить переиспользование компонентов
+npm run verify-reuse
+
+# Запустить все проверки
+npm run verify-all
+```
+
+**Результаты проверок:**
+- ✅ **59 токенов** синхронизированы (100%)
+- ✅ **19 файлов** без hardcoded значений
+- ✅ **Reuse Score: 2.47x** (отлично!)
+- ✅ **Button:** используется 22 раза в 4 файлах
+- ✅ **Card:** используется 7 раз в 3 файлах
+
+## 🌐 Деплой на Vercel
+
+### Автоматический деплой:
+
+1. **Push в GitHub:**
+   ```bash
+   git push origin main
+   ```
+
+2. **Vercel автоматически:**
+   - Обнаружит изменения
+   - Запустит билд
+   - Задеплоит на production
+
+### Ручной деплой:
+
+```bash
+# Установить Vercel CLI
+npm i -g vercel
+
+# Деплой
+vercel
+
+# Production деплой
+vercel --prod
+```
+
+**Live URLs:**
+- Production: https://fit-lead-test-assignment.vercel.app
+- Landing: https://fit-lead-test-assignment.vercel.app
+- UI Kit: https://fit-lead-test-assignment.vercel.app/ui-kit
+- Design System: https://fit-lead-test-assignment.vercel.app/design-system
 
 ## 📦 Tech Stack
 

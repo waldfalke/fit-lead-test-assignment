@@ -1,5 +1,7 @@
 'use client';
 
+import designTokens from '@/docs/design-tokens.json';
+
 export default function DesignSystemPage() {
   return (
     <div className="min-h-screen bg-background">
@@ -153,26 +155,26 @@ export default function DesignSystemPage() {
           </p>
 
           <div className="space-y-6">
-            {[
-              { name: 'XS', value: '8px', size: '2' },
-              { name: 'SM', value: '12px', size: '3' },
-              { name: 'MD', value: '16px', size: '4' },
-              { name: 'LG', value: '24px', size: '6' },
-              { name: 'XL', value: '32px', size: '8' },
-              { name: '2XL', value: '48px', size: '12' },
-              { name: '3XL', value: '64px', size: '16' },
-            ].map((item) => (
-              <div key={item.name} className="flex items-center gap-4">
-                <div className="w-16 text-sm font-medium text-[--color-text-primary]">{item.name}</div>
-                <div className="flex-1 bg-primary/20 h-4 rounded relative">
-                  <div
-                    className="bg-primary h-full rounded"
-                    style={{ width: `${item.size * 8}px` }}
-                  ></div>
+            {Object.entries(designTokens.spacing).map(([key, token]) => {
+              const value = token.$value;
+              const description = token.$description || '';
+              const pxValue = parseFloat(value) * 16; // Convert rem to px
+              
+              return (
+                <div key={key} className="flex items-center gap-4">
+                  <div className="w-16 text-sm font-medium text-[--color-text-primary]">{key.toUpperCase()}</div>
+                  <div className="flex-1 bg-primary/20 h-4 rounded relative">
+                    <div
+                      className="bg-primary h-full rounded"
+                      style={{ width: `${pxValue}px` }}
+                    ></div>
+                  </div>
+                  <div className="w-24 text-sm text-[--color-text-secondary]">
+                    {value} ({description})
+                  </div>
                 </div>
-                <div className="w-16 text-sm text-[--color-text-secondary]">{item.value}</div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </section>
 
@@ -186,27 +188,27 @@ export default function DesignSystemPage() {
           </p>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-            {[
-              { name: 'sm', value: '4px' },
-              { name: 'md', value: '6px' },
-              { name: 'lg', value: '8px' },
-              { name: 'xl', value: '10px' },
-              { name: '2xl', value: '32px' },
-              { name: 'full', value: '9999px' },
-            ].map((item) => (
-              <div key={item.name} className="space-y-3">
-                <div
-                  className="w-full h-16 bg-primary border border-[--color-border] flex items-center justify-center"
-                  style={{ borderRadius: item.value }}
-                >
-                  <span className="text-xs font-medium text-white">{item.name}</span>
+            {Object.entries(designTokens.borderRadius).map(([key, token]) => {
+              const value = token.$value;
+              const description = token.$description || '';
+              
+              return (
+                <div key={key} className="space-y-3">
+                  <div
+                    className="w-full h-16 bg-primary border border-[--color-border] flex items-center justify-center"
+                    style={{ borderRadius: value }}
+                  >
+                    <span className="text-xs font-medium text-white">{key}</span>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-sm font-medium text-[--color-text-primary]">{key}</div>
+                    <div className="text-xs text-[--color-text-secondary]" title={description}>
+                      {value}
+                    </div>
+                  </div>
                 </div>
-                <div className="text-center">
-                  <div className="text-sm font-medium text-[--color-text-primary]">{item.name}</div>
-                  <div className="text-xs text-[--color-text-secondary]">{item.value}</div>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </section>
       </main>

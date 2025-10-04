@@ -29,32 +29,32 @@ export const CTA: React.FC<CTAProps> = ({
 }) => {
   // Background styles based on variant
   const backgroundStyles: Record<typeof variant, string> = {
-    gradient: 'bg-gradient-to-r from-primary to-primary/80',
-    solid: 'bg-primary',
-    accent: 'bg-accent',
-    subtle: 'bg-surface',
+    gradient: 'bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-primary)]/80',
+    solid: 'bg-[var(--color-primary)]',
+    accent: 'bg-[var(--color-accent)]',
+    subtle: 'bg-[var(--color-surface)]',
   };
 
   // Text color based on variant
   const textColor = variant === 'subtle' 
-    ? 'text-[--color-text-primary]' 
+    ? 'text-[var(--color-text-primary)]' 
     : variant === 'accent'
-    ? 'text-[--color-text-on-accent]'
+    ? 'text-[var(--color-text-on-accent)]'
     : 'text-white';
 
   const subtextColor = variant === 'subtle'
-    ? 'text-[--color-text-secondary]'
+    ? 'text-[var(--color-text-secondary)]'
     : variant === 'accent'
-    ? 'text-[--color-text-on-accent]/80'
+    ? 'text-[var(--color-text-on-accent)]/80'
     : 'text-white/90';
 
   // Padding based on size
-  const padding = size === 'compact' ? 'py-12' : 'py-20';
+  const padding = size === 'compact' ? 'py-[var(--spacing-12)]' : 'py-[var(--spacing-16)]'; // 48px или 64px
 
   return (
     <section className={`${backgroundStyles[variant]} ${padding}`}>
-      <div className="container mx-auto px-6">
-        <div className="max-w-4xl mx-auto text-center space-y-8">
+      <div className="container mx-auto px-[var(--spacing-8)]"> {/* 32px */}
+        <div className="max-w-4xl mx-auto text-center space-y-[var(--spacing-12)]"> {/* 48px */}
           <h2 className={`text-3xl md:text-4xl lg:text-5xl font-bold ${textColor}`}>
             {title}
           </h2>
@@ -63,7 +63,7 @@ export const CTA: React.FC<CTAProps> = ({
               {description}
             </p>
           )}
-          <div className="flex gap-4 justify-center">
+          <div className="flex gap-[var(--spacing-6)] justify-center"> {/* 24px */}
             <Button
               variant={variant === 'accent' ? 'primary' : variant === 'subtle' ? 'primary' : 'tonal'}
               size="lg"

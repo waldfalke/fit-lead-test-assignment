@@ -1,16 +1,45 @@
 {
+  "$schema": "./schemas/tokens.schema.json",
   "$description": "Fit&Lead Design Tokens - Reference documentation. Source of truth: app/globals.css (@theme directive for Tailwind v4)",
+  "metadata": {
+    "version": "1.0.0",
+    "date": "2025-10-04T00:00:00Z",
+    "source": [
+      "app/globals.css",
+      "refs/theme-default.css",
+      "refs/Fit&Lead.html",
+      "refs/core.css"
+    ],
+    "generator": "manual-extraction-v1",
+    "author": "evgeny.sokolov"
+  },
   "color": {
     "brand": {
       "primary": {
-        "$type": "color",
-        "$value": "#00484F",
-        "$description": "Fit&Lead primary color (dark teal) - extracted from theme-default.css"
+        "50": { "$type": "color", "$value": "#E6F2F3" },
+        "100": { "$type": "color", "$value": "#CCE5E7" },
+        "200": { "$type": "color", "$value": "#99CBCF" },
+        "300": { "$type": "color", "$value": "#66B1B7" },
+        "400": { "$type": "color", "$value": "#33979F" },
+        "500": { "$type": "color", "$value": "#00484F", "$description": "Main brand color - dark teal" },
+        "600": { "$type": "color", "$value": "#003A3F" },
+        "700": { "$type": "color", "$value": "#002B2F" },
+        "800": { "$type": "color", "$value": "#001D20" },
+        "900": { "$type": "color", "$value": "#000E10" },
+        "DEFAULT": { "$type": "color", "$value": "#00484F", "$description": "Alias to primary-500" }
       },
       "accent": {
-        "$type": "color",
-        "$value": "#FBEA1B",
-        "$description": "Fit&Lead accent color (yellow) - extracted from Fit&Lead.html gradient"
+        "50": { "$type": "color", "$value": "#FFFEF5" },
+        "100": { "$type": "color", "$value": "#FFFCEB" },
+        "200": { "$type": "color", "$value": "#FFF9D6" },
+        "300": { "$type": "color", "$value": "#FFF5C2" },
+        "400": { "$type": "color", "$value": "#FEF2AD" },
+        "500": { "$type": "color", "$value": "#FBEA1B", "$description": "Main accent color - yellow" },
+        "600": { "$type": "color", "$value": "#C9BB16" },
+        "700": { "$type": "color", "$value": "#978C10" },
+        "800": { "$type": "color", "$value": "#645D0B" },
+        "900": { "$type": "color", "$value": "#322F05" },
+        "DEFAULT": { "$type": "color", "$value": "#FBEA1B", "$description": "Alias to accent-500" }
       }
     },
     "neutral": {
@@ -83,6 +112,24 @@
         "$type": "gradient",
         "$value": "linear-gradient(116deg, #FBEA1B 11.8%, #00484F 91.32%)",
         "$description": "Fit&Lead brand gradient (yellow to teal) - from auth page background"
+      }
+    },
+    "tailwind": {
+      "$description": "Tailwind-compatible utility class mappings (bg-*, text-*, border-*)",
+      "primary": {
+        "$type": "color",
+        "$value": "#00484F",
+        "$description": "Maps to bg-primary, text-primary, border-primary - references brand.primary"
+      },
+      "accent": {
+        "$type": "color",
+        "$value": "#FBEA1B",
+        "$description": "Maps to bg-accent, text-accent, border-accent - references brand.accent"
+      },
+      "surface": {
+        "$type": "color",
+        "$value": "#F5F7FA",
+        "$description": "Maps to bg-surface - references semantic.surface.light"
       }
     }
   },
@@ -180,6 +227,106 @@
         "color": "rgba(47, 43, 61, 0.75)"
       },
       "$description": "Focus ring - extracted from --bs-focus-ring"
+    }
+  },
+  "breakpoints": {
+    "xs": { 
+      "$type": "dimension", 
+      "$value": "375px", 
+      "$description": "Mobile devices (portrait) - задание требует 375px" 
+    },
+    "sm": { 
+      "$type": "dimension", 
+      "$value": "640px", 
+      "$description": "Mobile devices (landscape)" 
+    },
+    "md": { 
+      "$type": "dimension", 
+      "$value": "768px", 
+      "$description": "Tablets - задание требует 768px" 
+    },
+    "lg": { 
+      "$type": "dimension", 
+      "$value": "1024px", 
+      "$description": "Small desktops" 
+    },
+    "xl": { 
+      "$type": "dimension", 
+      "$value": "1440px", 
+      "$description": "Desktop - задание требует 1440px" 
+    },
+    "2xl": { 
+      "$type": "dimension", 
+      "$value": "1920px", 
+      "$description": "Large desktops (Full HD)" 
+    }
+  },
+  "zIndex": {
+    "base": { 
+      "$type": "number", 
+      "$value": "0", 
+      "$description": "Base z-index for normal flow" 
+    },
+    "dropdown": { 
+      "$type": "number", 
+      "$value": "1000", 
+      "$description": "Dropdown menus" 
+    },
+    "sticky": { 
+      "$type": "number", 
+      "$value": "1020", 
+      "$description": "Sticky headers/footers" 
+    },
+    "fixed": { 
+      "$type": "number", 
+      "$value": "1030", 
+      "$description": "Fixed position elements" 
+    },
+    "modal": { 
+      "$type": "number", 
+      "$value": "1050", 
+      "$description": "Modal dialogs and overlays" 
+    },
+    "popover": { 
+      "$type": "number", 
+      "$value": "1060", 
+      "$description": "Popovers and dropdowns" 
+    },
+    "tooltip": { 
+      "$type": "number", 
+      "$value": "1070", 
+      "$description": "Tooltips (highest priority)" 
+    }
+  },
+  "transitions": {
+    "$description": "Animation and transition durations",
+    "fast": {
+      "$type": "duration",
+      "$value": "150ms",
+      "$description": "Fast transitions (hover, focus)"
+    },
+    "base": {
+      "$type": "duration",
+      "$value": "300ms",
+      "$description": "Base transitions (nav link underline animation)"
+    },
+    "slow": {
+      "$type": "duration",
+      "$value": "500ms",
+      "$description": "Slow transitions (page transitions)"
+    }
+  },
+  "effects": {
+    "$description": "Visual effects (backdrop, blur, opacity)",
+    "backdropBlur": {
+      "$type": "string",
+      "$value": "blur(8px)",
+      "$description": "Backdrop blur for sticky header"
+    },
+    "backdropOpacity": {
+      "$type": "number",
+      "$value": "0.8",
+      "$description": "Header background opacity"
     }
   }
 }

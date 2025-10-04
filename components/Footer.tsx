@@ -1,147 +1,162 @@
 import React from 'react';
 import Link from 'next/link';
-import { FooterProps } from './Footer.types';
+import Image from 'next/image';
+
+interface FooterLink {
+  label: string;
+  href: string;
+}
+
+interface FooterNavSection {
+  title: string;
+  links: FooterLink[];
+}
+
+interface FooterContacts {
+  email: string;
+  telegram: string;
+}
+
+interface FooterProps {
+  navigation?: FooterNavSection[];
+  contacts?: FooterContacts;
+}
 
 /**
  * Footer Component
  * 
- * Site footer with navigation, contacts, and brand info.
- * Implements CONTRACT-FOOTER-001 requirements.
+ * Simplified footer in Fit&Lead brand colors: logo, copyright, and social links.
  * 
  * @example
  * ```tsx
- * <Footer
- *   navigation={[
- *     { title: 'Product', links: [{ label: 'Features', href: '/features' }] }
- *   ]}
- *   contacts={{ email: 'hello@fit-lead.com', telegram: '@fitlead' }}
- * />
+ * <Footer navigation={footerNavigation} contacts={footerContacts} />
  * ```
  */
-export const Footer: React.FC<FooterProps> = ({
-  navigation,
-  contacts,
-  social,
-  copyrightText,
-}) => {
+export const Footer: React.FC<FooterProps> = ({ navigation, contacts }) => {
   const currentYear = new Date().getFullYear();
-  const copyright = copyrightText || `© ${currentYear} Fit&Lead. All rights reserved.`;
 
   return (
-    <footer className="border-t border-[--color-border] bg-surface">
-      <div className="container mx-auto px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-          {/* Brand Section */}
-          <div className="space-y-4">
-            <h3 className="text-xl font-bold text-[--color-text-primary]">
-              Fit&Lead
-            </h3>
-            <p className="text-sm text-[--color-text-secondary] leading-relaxed">
-              Первая партнёрская CPA-сеть в тематике спорта, здоровья и ЗОЖ
-            </p>
+    <footer className="bg-[var(--color-surface)] border-t border-[var(--color-border)]">
+      <div className="container mx-auto px-6 py-12 md:px-8 md:py-16">
+        {/* Navigation Sections (if provided) */}
+        {navigation && navigation.length > 0 && (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            {navigation.map((section, index) => (
+              <div key={index}>
+                <h3 className="text-sm font-semibold text-[var(--color-text-primary)] mb-4">
+                  {section.title}
+                </h3>
+                <ul className="space-y-2">
+                  {section.links.map((link, linkIndex) => (
+                    <li key={linkIndex}>
+                      <Link
+                        href={link.href}
+                        className="text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-accent)] transition-colors"
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
+        )}
 
-          {/* Navigation Sections */}
-          {navigation.map((section, index) => (
-            <div key={index} className="space-y-4">
-              <h4 className="text-sm font-semibold text-[--color-text-primary] uppercase tracking-wide">
-                {section.title}
-              </h4>
-              <ul className="space-y-2">
-                {section.links.map((link, linkIndex) => (
-                  <li key={linkIndex}>
-                    <Link
-                      href={link.href}
-                      className="text-sm text-[--color-text-secondary] hover:text-primary hover:underline transition-colors"
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-
-          {/* Contacts Section */}
-          <div className="space-y-4">
-            <h4 className="text-sm font-semibold text-[--color-text-primary] uppercase tracking-wide">
+        {/* Contacts (if provided) */}
+        {contacts && (
+          <div className="mb-8 pb-8 border-b border-[var(--color-border)]">
+            <h3 className="text-sm font-semibold text-[var(--color-text-primary)] mb-4">
               Контакты
-            </h4>
-            <ul className="space-y-2">
-              {contacts.email && (
-                <li>
-                  <a
-                    href={`mailto:${contacts.email}`}
-                    className="text-sm text-[--color-text-secondary] hover:text-primary hover:underline transition-colors"
-                  >
-                    {contacts.email}
-                  </a>
-                </li>
-              )}
-              {contacts.telegram && (
-                <li>
-                  <a
-                    href={`https://t.me/${contacts.telegram.replace('@', '')}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm text-[--color-text-secondary] hover:text-primary hover:underline transition-colors"
-                  >
-                    Telegram: {contacts.telegram}
-                  </a>
-                </li>
-              )}
-              {contacts.supportUrl && (
-                <li>
-                  <a
-                    href={contacts.supportUrl}
-                    className="text-sm text-[--color-text-secondary] hover:text-primary hover:underline transition-colors"
-                  >
-                    Поддержка
-                  </a>
-                </li>
-              )}
-            </ul>
-          </div>
-        </div>
-
-        {/* Social Links */}
-        {social && social.length > 0 && (
-          <div className="flex items-center gap-4 py-6 border-t border-[--color-border]">
-            <span className="text-sm text-[--color-text-secondary]">Мы в соцсетях:</span>
-            <div className="flex gap-3">
-              {social.map((link, index) => (
-                <a
-                  key={index}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`Visit us on ${link.platform}`}
-                  className="text-[--color-text-secondary] hover:text-primary transition-colors"
-                >
-                  {link.icon}
-                </a>
-              ))}
+            </h3>
+            <div className="flex flex-col gap-2">
+              <a
+                href={`mailto:${contacts.email}`}
+                className="text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-accent)] transition-colors"
+              >
+                {contacts.email}
+              </a>
+              <a
+                href={`https://t.me/${contacts.telegram.replace('@', '')}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-accent)] transition-colors"
+              >
+                {contacts.telegram}
+              </a>
             </div>
           </div>
         )}
 
-        {/* Copyright */}
-        <div className="pt-6 border-t border-[--color-border]">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-[--color-text-secondary]">{copyright}</p>
-            <div className="flex gap-6">
+        {/* Main Footer Content - Mobile: Column, Desktop: 3 Columns */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 items-center">
+          {/* Logo */}
+          <div className="flex justify-center md:justify-start">
+            <Link href="/" className="hover:opacity-80 transition-opacity">
+              <Image
+                src="/logo.svg"
+                alt="Fit&Lead"
+                width={206}
+                height={54}
+                className="h-12 w-auto"
+                priority
+              />
+            </Link>
+          </div>
+
+          {/* Copyright & Links - Mobile: Center, Desktop: Left */}
+          <div className="flex flex-col gap-3 text-center md:text-left">
+            <p className="text-xs text-[var(--color-text-secondary)] leading-relaxed">
+              © {currentYear} ООО «ЛИДЕРЫ МНЕНИЙ» ИНН 6685214668 Все права защищены
+            </p>
+            <div className="flex flex-col md:flex-row gap-2 md:gap-4 text-xs">
               <Link
                 href="/privacy"
-                className="text-sm text-[--color-text-secondary] hover:text-primary hover:underline transition-colors"
+                className="text-[var(--color-text-secondary)] hover:text-[var(--color-accent)] hover:underline transition-colors"
               >
-                Политика конфиденциальности
+                Политика обработки персональных данных
               </Link>
               <Link
-                href="/terms"
-                className="text-sm text-[--color-text-secondary] hover:text-primary hover:underline transition-colors"
+                href="/info"
+                className="text-[var(--color-text-secondary)] hover:text-[var(--color-accent)] hover:underline transition-colors"
               >
-                Условия использования
+                Информация о продукте
               </Link>
+            </div>
+          </div>
+
+          {/* Social Links - Mobile: Center, Desktop: Right */}
+          <div className="flex flex-col gap-3 items-center md:items-end">
+            <p className="text-sm text-[var(--color-text-secondary)]">Наши соцсети</p>
+            <div className="flex gap-4">
+              <a
+                href="https://vk.com/affiliateclub"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="VKontakte"
+                className="hover:opacity-80 transition-opacity"
+              >
+                <Image
+                  src="/vk-logo.svg"
+                  alt="VKontakte"
+                  width={34}
+                  height={34}
+                />
+              </a>
+              <a
+                href="https://t.me/FitnessAffiliate"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Telegram"
+                className="hover:opacity-80 transition-opacity"
+              >
+                <Image
+                  src="/tg-logo.svg"
+                  alt="Telegram"
+                  width={34}
+                  height={34}
+                />
+              </a>
             </div>
           </div>
         </div>

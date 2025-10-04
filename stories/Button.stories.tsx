@@ -247,6 +247,52 @@ export const WithBothIcons: Story = {
 };
 
 // ============================================
+// Icon-Only Buttons
+// ============================================
+
+export const IconOnly: Story = {
+  args: {
+    variant: 'ghost',
+    size: 'md',
+    iconOnly: true,
+    ariaLabel: 'Icon button',
+    children: <IconLeft />,
+  },
+};
+
+export const IconOnlyPrimary: Story = {
+  args: {
+    variant: 'primary',
+    size: 'md',
+    iconOnly: true,
+    ariaLabel: 'Primary icon button',
+    children: <IconLeft />,
+  },
+};
+
+export const IconOnlySizes: Story = {
+  render: () => (
+    <div className="flex items-center gap-2">
+      <Button variant="ghost" size="xs" iconOnly ariaLabel="XS">
+        <IconLeft />
+      </Button>
+      <Button variant="ghost" size="sm" iconOnly ariaLabel="SM">
+        <IconLeft />
+      </Button>
+      <Button variant="ghost" size="md" iconOnly ariaLabel="MD">
+        <IconLeft />
+      </Button>
+      <Button variant="ghost" size="lg" iconOnly ariaLabel="LG">
+        <IconLeft />
+      </Button>
+      <Button variant="ghost" size="xl" iconOnly ariaLabel="XL">
+        <IconLeft />
+      </Button>
+    </div>
+  ),
+};
+
+// ============================================
 // All Variants Showcase
 // ============================================
 

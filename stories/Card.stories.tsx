@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Card } from '../components/Card';
+import { TrendingUpIcon, HeadphonesIcon, ZapIcon, BarChart3Icon } from '../components/icons';
 
 /**
  * Card component stories
@@ -7,7 +8,7 @@ import { Card } from '../components/Card';
  * 
  * Demonstrates:
  * - All variants: default, elevated, outlined
- * - With/without icons
+ * - With/without icons (using Lucide React icons)
  * - Interactive cards (href, onClick)
  * - Different content lengths
  */
@@ -51,58 +52,8 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-// Sample icon component
-const SampleIcon = () => (
-  <svg
-    width="48"
-    height="48"
-    viewBox="0 0 48 48"
-    fill="none"
-    className="text-primary"
-  >
-    <rect width="48" height="48" rx="8" fill="currentColor" opacity="0.1" />
-    <path
-      d="M24 14L28 22H20L24 14Z M24 26L20 34H28L24 26Z"
-      fill="currentColor"
-    />
-  </svg>
-);
-
-const HeartIcon = () => (
-  <svg
-    width="48"
-    height="48"
-    viewBox="0 0 48 48"
-    fill="none"
-    className="text-primary"
-  >
-    <path
-      d="M24 38C24 38 8 28 8 18C8 12 12 8 16 8C19 8 22 10 24 13C26 10 29 8 32 8C36 8 40 12 40 18C40 28 24 38 24 38Z"
-      fill="currentColor"
-      opacity="0.2"
-      stroke="currentColor"
-      strokeWidth="2"
-    />
-  </svg>
-);
-
-const StarIcon = () => (
-  <svg
-    width="48"
-    height="48"
-    viewBox="0 0 48 48"
-    fill="none"
-    className="text-primary"
-  >
-    <path
-      d="M24 8L28 20L40 20L30 28L34 40L24 32L14 40L18 28L8 20L20 20L24 8Z"
-      fill="currentColor"
-      opacity="0.2"
-      stroke="currentColor"
-      strokeWidth="2"
-    />
-  </svg>
-);
+// Icon components from Lucide React
+// Using semantic wrappers from components/icons
 
 // ============================================
 // Default Variant Stories
@@ -111,7 +62,7 @@ const StarIcon = () => (
 export const Default: Story = {
   args: {
     variant: 'default',
-    icon: <SampleIcon />,
+    icon: <TrendingUpIcon size={48} className="text-primary" />,
     title: 'Default Card',
     description: 'This is a default card with subtle background. Perfect for content grids and feature showcases.',
   },
@@ -132,7 +83,7 @@ export const DefaultWithoutIcon: Story = {
 export const Elevated: Story = {
   args: {
     variant: 'elevated',
-    icon: <HeartIcon />,
+    icon: <HeadphonesIcon size={48} className="text-primary" />,
     title: 'Elevated Card',
     description: 'Elevated card with shadow effect. Provides more visual prominence and depth.',
   },
@@ -141,7 +92,7 @@ export const Elevated: Story = {
 export const ElevatedHover: Story = {
   args: {
     variant: 'elevated',
-    icon: <StarIcon />,
+    icon: <ZapIcon size={48} className="text-primary" />,
     title: 'Hover Me',
     description: 'Elevated cards have enhanced shadow on hover for better interactivity.',
   },
@@ -161,7 +112,7 @@ export const ElevatedHover: Story = {
 export const Outlined: Story = {
   args: {
     variant: 'outlined',
-    icon: <SampleIcon />,
+    icon: <BarChart3Icon size={48} className="text-primary" />,
     title: 'Outlined Card',
     description: 'Outlined card with border. Minimal style that works well on colored backgrounds.',
   },
@@ -182,7 +133,7 @@ export const OutlinedWithoutIcon: Story = {
 export const ClickableWithHref: Story = {
   args: {
     variant: 'elevated',
-    icon: <HeartIcon />,
+    icon: <HeadphonesIcon size={48} className="text-primary" />,
     title: 'Clickable Card (Link)',
     description: 'This card is a link. Click to navigate (href prop).',
     href: '#',
@@ -199,7 +150,7 @@ export const ClickableWithHref: Story = {
 export const ClickableWithOnClick: Story = {
   args: {
     variant: 'default',
-    icon: <StarIcon />,
+    icon: <ZapIcon size={48} className="text-primary" />,
     title: 'Clickable Card (Button)',
     description: 'This card is a button. Click to trigger action.',
     onClick: () => alert('Card clicked!'),
@@ -220,7 +171,7 @@ export const ClickableWithOnClick: Story = {
 export const LongContent: Story = {
   args: {
     variant: 'default',
-    icon: <SampleIcon />,
+    icon: <BarChart3Icon size={48} className="text-primary" />,
     title: 'Card with Longer Content',
     description:
       'This card demonstrates how the component handles longer text content. The description can span multiple lines and the card will adjust its height accordingly. This ensures content is always readable and properly formatted.',
@@ -230,7 +181,7 @@ export const LongContent: Story = {
 export const ShortContent: Story = {
   args: {
     variant: 'elevated',
-    icon: <HeartIcon />,
+    icon: <HeadphonesIcon size={48} className="text-primary" />,
     title: 'Brief',
     description: 'Short and sweet.',
   },
@@ -250,19 +201,19 @@ export const AllVariants: Story = {
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-6xl">
       <Card
         variant="default"
-        icon={<SampleIcon />}
+        icon={<BarChart3Icon size={48} className="text-primary" />}
         title="Default"
         description="Subtle background for content grids"
       />
       <Card
         variant="elevated"
-        icon={<HeartIcon />}
+        icon={<HeadphonesIcon size={48} className="text-primary" />}
         title="Elevated"
         description="Shadow effect for prominence"
       />
       <Card
         variant="outlined"
-        icon={<StarIcon />}
+        icon={<ZapIcon size={48} className="text-primary" />}
         title="Outlined"
         description="Border style for minimal look"
       />
@@ -287,19 +238,19 @@ export const BenefitsGrid: Story = {
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-6xl">
       <Card
         variant="default"
-        icon={<HeartIcon />}
+        icon={<HeadphonesIcon size={48} className="text-primary" />}
         title="Health & Wellness"
         description="Professional guidance for your fitness journey with personalized training plans."
       />
       <Card
         variant="default"
-        icon={<StarIcon />}
+        icon={<ZapIcon size={48} className="text-primary" />}
         title="Expert Trainers"
         description="Work with certified professionals who understand your goals and limitations."
       />
       <Card
         variant="default"
-        icon={<SampleIcon />}
+        icon={<BarChart3Icon size={48} className="text-primary" />}
         title="Flexible Schedule"
         description="Train at your own pace with 24/7 access to our platform and resources."
       />

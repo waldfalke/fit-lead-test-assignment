@@ -24,6 +24,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       loading = false,
       iconLeft,
       iconRight,
+      iconOnly = false,
       onClick,
       type = 'button',
       ariaLabel,
@@ -53,69 +54,87 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     // Variant styles - mapped to design tokens
     const variantStyles: Record<typeof variant, string> = {
       primary: [
-        'bg-primary',
+        'bg-[var(--color-primary)]',
         'text-white',
-        'hover:bg-[--color-primary-hover]',
-        'focus-visible:ring-[--color-focus]',
+        'hover:bg-[var(--color-primary-hover)]',
+        'focus-visible:ring-2',
+        'focus-visible:ring-[var(--color-focus)]',
         'active:scale-95',
       ].join(' '),
       secondary: [
         'bg-transparent',
-        'text-primary',
+        'text-[var(--color-primary)]',
         'border-2',
-        'border-primary',
-        'hover:bg-primary',
+        'border-[var(--color-primary)]',
+        'hover:bg-[var(--color-primary)]',
         'hover:text-white',
-        'focus-visible:ring-[--color-focus]',
+        'focus-visible:ring-2',
+        'focus-visible:ring-[var(--color-focus)]',
         'active:scale-95',
       ].join(' '),
       ghost: [
         'bg-transparent',
-        'text-primary',
-        'hover:bg-surface',
-        'focus-visible:ring-[--color-focus]',
+        'text-[var(--color-text-primary)]',
+        'hover:bg-[var(--color-surface)]',
+        'focus-visible:ring-2',
+        'focus-visible:ring-[var(--color-focus)]',
         'active:scale-95',
       ].join(' '),
       danger: [
-        'bg-[--color-danger]',
+        'bg-[var(--color-danger)]',
         'text-white',
+        'hover:bg-[var(--color-danger)]',
         'hover:opacity-90',
-        'focus-visible:ring-[--color-danger]',
+        'focus-visible:ring-2',
+        'focus-visible:ring-[var(--color-focus)]',
         'active:scale-95',
       ].join(' '),
       subtle: [
-        'bg-surface',
-        'text-[--color-text-primary]',
-        'hover:bg-[--color-border]',
-        'focus-visible:ring-[--color-focus]',
+        'bg-[var(--color-surface)]',
+        'text-[var(--color-text-primary)]',
+        'hover:bg-[var(--color-border)]',
+        'focus-visible:ring-2',
+        'focus-visible:ring-[var(--color-focus)]',
         'active:scale-95',
       ].join(' '),
       link: [
         'bg-transparent',
-        'text-primary',
+        'text-[var(--color-primary)]',
         'underline',
         'underline-offset-4',
         'hover:opacity-80',
-        'focus-visible:ring-[--color-focus]',
+        'focus-visible:ring-2',
+        'focus-visible:ring-[var(--color-focus)]',
         'focus-visible:ring-offset-0',
       ].join(' '),
       tonal: [
-        'bg-accent',
-        'text-[--color-text-on-accent]',
-        'hover:bg-[--color-accent-hover]',
-        'focus-visible:ring-[--color-focus]',
+        'bg-[var(--color-accent)]',
+        'text-[var(--color-text-on-accent)]',
+        'hover:bg-[var(--color-accent-hover)]',
+        'focus-visible:ring-2',
+        'focus-visible:ring-[var(--color-focus)]',
         'active:scale-95',
       ].join(' '),
     };
 
     // Size styles - mapped to spacing tokens
-    const sizeStyles: Record<typeof size, string> = {
-      xs: 'px-3 py-1.5 text-xs rounded-full min-h-[32px]',
-      sm: 'px-4 py-2 text-sm rounded-full min-h-[36px]',
-      md: 'px-6 py-2.5 text-base rounded-full min-h-[40px]',
-      lg: 'px-8 py-3 text-lg rounded-full min-h-[44px]',
-      xl: 'px-10 py-4 text-xl rounded-full min-h-[48px]',
-    };
+    const sizeStyles: Record<typeof size, string> = iconOnly
+      ? {
+          // Icon-only: square buttons (w = h)
+          xs: 'p-[var(--spacing-1)] text-sm rounded-[var(--radius-md)] w-8 h-8',
+          sm: 'p-[var(--spacing-1)] text-sm rounded-[var(--radius-md)] w-9 h-9',
+          md: 'p-[var(--spacing-1)] text-base rounded-[var(--radius-md)] w-10 h-10',
+          lg: 'p-[var(--spacing-3)] text-lg rounded-[var(--radius-md)] w-11 h-11',
+          xl: 'p-[var(--spacing-4)] text-xl rounded-[var(--radius-md)] w-12 h-12',
+        }
+      : {
+          // Regular: rectangular buttons with text
+          xs: 'px-[var(--spacing-4)] py-[var(--spacing-2)] text-sm rounded-full min-h-8',
+          sm: 'px-[var(--spacing-6)] py-[var(--spacing-2)] text-sm rounded-full min-h-9',
+          md: 'px-8 py-[var(--spacing-2)] text-base rounded-full min-h-10',
+          lg: 'px-12 py-[var(--spacing-3)] text-lg rounded-full min-h-11',
+          xl: 'px-[var(--spacing-16)] py-[var(--spacing-4)] text-xl rounded-full min-h-12',
+        };
 
     // Combine all styles
     const buttonClasses = [

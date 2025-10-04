@@ -29,7 +29,6 @@ export const Card = React.forwardRef<HTMLDivElement, CardProps>(
       onClick,
       className = '',
       headingLevel = 'h3',
-      ...rest
     },
     ref
   ) => {
@@ -37,30 +36,33 @@ export const Card = React.forwardRef<HTMLDivElement, CardProps>(
     const baseStyles = [
       'flex',
       'flex-col',
-      'gap-4',
-      'p-6',
-      'rounded-lg',
+      'gap-[var(--spacing-6)]',  // 24px
+      'p-[var(--spacing-8)]',   // 32px
+      'rounded-[var(--radius-lg)]',  // 8px
       'transition-all',
       'duration-200',
+      'min-w-[17.5rem]',  // 280px - минимальная ширина для мобильных
+      'max-w-[25rem]',    // 400px - максимальная ширина для читаемости
+      'w-full',  // Занимает всю доступную ширину в пределах max-w
     ].join(' ');
 
     // Variant styles - mapped to design tokens
     const variantStyles: Record<typeof variant, string> = {
       default: [
-        'bg-surface',
+        'bg-[var(--color-surface)]',
         'border',
         'border-transparent',
       ].join(' '),
       elevated: [
-        'bg-surface',
-        'shadow-md',
-        'hover:shadow-lg',
+        'bg-[var(--color-surface)]',
+        'shadow-[var(--shadow-md)]',
+        'hover:shadow-[var(--shadow-lg)]',
       ].join(' '),
       outlined: [
         'bg-transparent',
         'border',
-        'border-[--color-border]',
-        'hover:border-primary',
+        'border-[var(--color-border)]',
+        'hover:border-[var(--color-primary)]',
       ].join(' '),
     };
 
@@ -70,7 +72,7 @@ export const Card = React.forwardRef<HTMLDivElement, CardProps>(
       'hover:scale-[1.02]',
       'focus-visible:outline-none',
       'focus-visible:ring-2',
-      'focus-visible:ring-[--color-focus]',
+      'focus-visible:ring-[var(--color-focus)]',
       'focus-visible:ring-offset-2',
       'active:scale-[0.98]',
     ].join(' ') : '';
@@ -97,16 +99,15 @@ export const Card = React.forwardRef<HTMLDivElement, CardProps>(
           </div>
         )}
         <div className="flex-1 space-y-2">
-          <HeadingTag className="text-xl font-semibold text-[--color-text-primary]">
+          <HeadingTag className="text-xl font-semibold text-[var(--color-text-primary)]">
             {title}
           </HeadingTag>
-          <p className="text-base text-[--color-text-secondary] leading-relaxed">
+          <p className="text-base text-[var(--color-text-secondary)] leading-relaxed">
             {description}
           </p>
         </div>
       </>
     );
-
     // If href provided, render as Link
     if (href) {
       return (

@@ -40,6 +40,13 @@ export interface ButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement
   iconRight?: ReactNode;
 
   /**
+   * Icon-only button (no text)
+   * Makes button square instead of rectangular
+   * @default false
+   */
+  iconOnly?: boolean;
+
+  /**
    * Button type attribute
    * @default "button"
    */
