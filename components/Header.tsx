@@ -62,7 +62,7 @@ export const Header = React.forwardRef<HTMLElement, HeaderProps>(
           {/* Logo */}
           <Link href="/" className="flex items-center hover:opacity-80 transition-opacity">
             <Image
-              src="/logo.svg"
+              src={currentTheme === 'dark' ? '/logo-dark.svg' : '/logo.svg'}
               alt="Fit&Lead"
               width={120}
               height={40}

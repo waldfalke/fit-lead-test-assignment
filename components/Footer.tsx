@@ -1,14 +1,18 @@
+'use client';
+
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { SITE_NAVIGATION, SOCIAL_LINKS, LEGAL_LINKS, COMPANY_INFO } from '@/config/navigation';
 import { Navigation } from './Navigation';
+import { useTheme } from '@/hooks/useTheme';
 
 /**
  * Footer Component
  * 
  * Simplified footer in Fit&Lead brand colors: logo, navigation, copyright, and social links.
  * Uses same navigation as Header for consistency (from centralized config).
+ * Uses theme-aware logo (yellow for dark theme, regular for light theme).
  * 
  * @example
  * ```tsx
@@ -17,6 +21,7 @@ import { Navigation } from './Navigation';
  */
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
+  const { theme } = useTheme();
 
   return (
     <footer className="bg-[var(--color-surface)] border-t border-[var(--color-border)]">
@@ -27,7 +32,7 @@ export const Footer: React.FC = () => {
           <div className="flex justify-center md:justify-start">
             <Link href="/" className="hover:opacity-80 transition-opacity">
               <Image
-                src="/logo.svg"
+                src={theme === 'dark' ? '/logo-dark.svg' : '/logo.svg'}
                 alt="Fit&Lead"
                 width={206}
                 height={54}
@@ -51,7 +56,7 @@ export const Footer: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="VKontakte"
-              className="opacity-70 hover:opacity-100 transition-opacity"
+              className="p-2 rounded-lg bg-[var(--color-primary)] hover:bg-[var(--color-primary)]/80 transition-colors"
             >
               <Image
                 src="/vk-logo.svg"
@@ -65,7 +70,7 @@ export const Footer: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Telegram"
-              className="opacity-70 hover:opacity-100 transition-opacity"
+              className="p-2 rounded-lg bg-[var(--color-primary)] hover:bg-[var(--color-primary)]/80 transition-colors"
             >
               <Image
                 src="/tg-logo.svg"
