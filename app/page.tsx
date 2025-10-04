@@ -35,31 +35,6 @@ export default function Home() {
     },
   ];
 
-  // Footer navigation data
-  const footerNavigation = [
-    {
-      title: 'Продукт',
-      links: [
-        { label: 'Возможности', href: '/features' },
-        { label: 'Тарифы', href: '/pricing' },
-        { label: 'Кейсы', href: '/cases' },
-      ],
-    },
-    {
-      title: 'Ресурсы',
-      links: [
-        { label: 'Документация', href: '/docs' },
-        { label: 'UI Kit', href: '/ui-kit' },
-        { label: 'Design System', href: '/design-system' },
-      ],
-    },
-  ];
-
-  const footerContacts = {
-    email: 'hello@fit-lead.com',
-    telegram: '@fitlead',
-  };
-
   return (
     <main>
       {/* Hero Section */}
@@ -89,10 +64,7 @@ export default function Home() {
       />
 
       {/* Footer */}
-      <Footer
-        navigation={footerNavigation}
-        contacts={footerContacts}
-      />
+      <Footer />
     </main>
   );
 }
