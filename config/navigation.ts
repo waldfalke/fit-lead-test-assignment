@@ -9,6 +9,7 @@ export interface NavigationItem {
   label: string;
   href: string;
   active?: boolean;
+  external?: boolean; // Opens in new tab if true
 }
 
 /**
@@ -19,6 +20,7 @@ export const SITE_NAVIGATION: NavigationItem[] = [
   { label: 'Главная', href: '/', active: false },
   { label: 'UI Kit', href: '/ui-kit', active: false },
   { label: 'Design System', href: '/design-system', active: false },
+  { label: 'Storybook', href: 'https://waldfalke.github.io/fit-lead-test-assignment/', active: false, external: true },
 ];
 
 /**

@@ -3,11 +3,7 @@
  * Implements CONTRACT-HEADER-001 API
  */
 
-export interface NavigationItem {
-  label: string;
-  href: string;
-  active?: boolean;
-}
+import { NavigationItem } from '@/config/navigation';
 
 export interface HeaderProps {
   /**

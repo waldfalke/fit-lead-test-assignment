@@ -7,6 +7,7 @@ import { HeaderProps } from './Header.types';
 import { ThemeToggle } from './ThemeToggle';
 import { MenuIcon, XIcon } from './icons';
 import { Button } from './Button';
+import { Navigation } from './Navigation';
 
 /**
  * Header Component
@@ -71,37 +72,11 @@ export const Header = React.forwardRef<HTMLElement, HeaderProps>(
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex gap-8" aria-label="Main navigation">
-            {navigation.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={`
-                  relative
-                  text-base font-medium
-                  text-[var(--color-text-primary)]
-                  transition-colors duration-300
-                  
-                  after:content-['']
-                  after:absolute
-                  after:bottom-[-4px]
-                  after:left-1/2
-                  after:w-0
-                  after:h-[2px]
-                  after:bg-[var(--color-primary)]
-                  after:transition-all
-                  after:duration-300
-                  
-                  hover:after:w-full
-                  hover:after:left-0
-                  
-                  ${item.active ? 'after:w-full after:left-0' : ''}
-                `}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </nav>
+          <Navigation 
+            items={navigation}
+            variant="header"
+            className="hidden md:flex gap-8"
+          />
 
           {/* Theme Toggle (Desktop) */}
           <div className="hidden md:block">
@@ -160,26 +135,12 @@ export const Header = React.forwardRef<HTMLElement, HeaderProps>(
               </div>
 
               {/* Mobile Nav Links */}
-              <div className="flex flex-col gap-6 px-8">
-                {navigation.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className={`
-                      text-lg font-medium
-                      text-[var(--color-text-primary)]
-                      py-4
-                      border-b border-[var(--color-border)]
-                      transition-colors
-                      hover:text-[var(--color-primary)]
-                      ${item.active ? 'text-[var(--color-primary)]' : ''}
-                    `}
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-              </div>
+              <Navigation 
+                items={navigation}
+                variant="mobile"
+                className="flex flex-col gap-6 px-8"
+                onItemClick={() => setMobileMenuOpen(false)}
+              />
             </nav>
           </>
         )}

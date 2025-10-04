@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { SITE_NAVIGATION, SOCIAL_LINKS, LEGAL_LINKS, COMPANY_INFO } from '@/config/navigation';
+import { Navigation } from './Navigation';
 
 /**
  * Footer Component
@@ -37,17 +38,11 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Navigation - Same as Header */}
-          <nav className="flex justify-center gap-8" aria-label="Footer navigation">
-            {SITE_NAVIGATION.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="text-base font-medium text-[var(--color-text-primary)] hover:text-[var(--color-primary)] transition-colors"
-              >
-                {item.label}
-              </Link>
-            ))}
-          </nav>
+          <Navigation 
+            items={SITE_NAVIGATION}
+            variant="footer"
+            className="flex justify-center gap-8"
+          />
 
           {/* Social Links - Mobile: Center, Desktop: Right */}
           <div className="flex gap-4 items-center justify-center md:justify-end">
