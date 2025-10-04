@@ -88,26 +88,6 @@ export const Hero: React.FC<HeroProps> = ({
           )}
         </div>
       </div>
-
-      {/* Scroll indicator */}
-      <div className="absolute bottom-[var(--spacing-12)] left-1/2 -translate-x-1/2 hidden md:block"> {/* 48px */}
-        <div className="flex flex-col items-center gap-[var(--spacing-4)] text-[var(--color-text-on-accent)]/60"> {/* 16px */}
-          <span className="text-sm">Прокрутите вниз</span>
-          <svg
-            className="w-6 h-6 animate-bounce"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M19 14l-7 7m0 0l-7-7m7 7V3"
-            />
-          </svg>
-        </div>
-      </div>
     </section>
   );
 };
