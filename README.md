@@ -194,3 +194,4 @@ fit-lead-test-assignment/
 ---
 
 Создано для Fit&Lead тестового задания | 2025
+# Auto-deploy test
