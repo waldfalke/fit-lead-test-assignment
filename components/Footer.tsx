@@ -56,13 +56,14 @@ export const Footer: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="VKontakte"
-              className="p-2 rounded-lg bg-[var(--color-primary)] hover:bg-[var(--color-primary)]/80 transition-colors"
+              className="opacity-70 hover:opacity-100 transition-opacity"
             >
               <Image
-                src="/vk-logo.svg"
+                src="/vk-icon.svg"
                 alt="VKontakte"
                 width={34}
                 height={34}
+                className={theme === 'dark' ? 'brightness-0 invert' : ''}
               />
             </a>
             <a
@@ -70,13 +71,14 @@ export const Footer: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Telegram"
-              className="p-2 rounded-lg bg-[var(--color-primary)] hover:bg-[var(--color-primary)]/80 transition-colors"
+              className="opacity-70 hover:opacity-100 transition-opacity"
             >
               <Image
-                src="/tg-logo.svg"
+                src="/tg-icon.svg"
                 alt="Telegram"
                 width={34}
                 height={34}
+                className={theme === 'dark' ? 'brightness-0 invert' : ''}
               />
             </a>
           </div>
