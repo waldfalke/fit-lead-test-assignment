@@ -36,19 +36,19 @@ export const Hero: React.FC<HeroProps> = ({
 
   return (
     <section
-      className={`relative min-h-[60vh] flex items-center ${backgroundStyles[backgroundVariant]}`}
+      className={`relative min-h-[80vh] max-h-[90vh] flex items-center ${backgroundStyles[backgroundVariant]}`}
     >
-      <div className="container mx-auto px-6 py-16 md:py-24">
+      <div className="container mx-auto px-6 py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
-          <div className="space-y-6 text-center lg:text-left">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[--color-text-on-accent] leading-tight">
+          <div className="space-y-8 text-center lg:text-left">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[--color-text-on-accent] leading-tight">
               {title}
             </h1>
-            <p className="text-base md:text-lg lg:text-xl text-[--color-text-on-accent]/90 max-w-2xl mx-auto lg:mx-0">
+            <p className="text-lg md:text-xl lg:text-2xl text-[--color-text-on-accent]/90 max-w-2xl mx-auto lg:mx-0">
               {subtitle}
             </p>
-            <div className="flex gap-4 justify-center lg:justify-start pt-4">
+            <div className="flex gap-4 justify-center lg:justify-start">
               <Button
                 variant="primary"
                 size="lg"

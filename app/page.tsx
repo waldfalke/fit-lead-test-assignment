@@ -66,8 +66,8 @@ export default function Home() {
       title: 'Ресурсы',
       links: [
         { label: 'Документация', href: '/docs' },
-        { label: 'UI Kit & Design System', href: '/ui-kit' },
-        { label: 'Storybook', href: '/storybook' },
+        { label: 'UI Kit', href: '/ui-kit' },
+        { label: 'Design System', href: '/design-system' },
       ],
     },
   ];
