@@ -20,6 +20,8 @@ export const SITE_NAVIGATION: NavigationItem[] = [
   { label: 'Главная', href: '/', active: false },
   { label: 'UI Kit', href: '/ui-kit', active: false },
   { label: 'Storybook', href: 'https://waldfalke.github.io/fit-lead-test-assignment/', active: false, external: true },
+  { label: 'GitHub', href: 'https://github.com/waldfalke/fit-lead-test-assignment', active: false, external: true },
+  { label: 'README', href: 'https://github.com/waldfalke/fit-lead-test-assignment#readme', active: false, external: true },
 ];
 
 /**
