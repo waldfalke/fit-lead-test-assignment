@@ -64,8 +64,8 @@ export const Header = React.forwardRef<HTMLElement, HeaderProps>(
             <Image
               src={currentTheme === 'dark' ? '/logo-dark.svg' : '/logo.svg'}
               alt="Fit&Lead"
-              width={120}
-              height={40}
+              width={206}
+              height={54}
               className="h-10 w-auto"
               priority
             />
