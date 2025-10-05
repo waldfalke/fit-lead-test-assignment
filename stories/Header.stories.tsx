@@ -34,11 +34,12 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-// Sample navigation data
+// Sample navigation data (using actual site navigation)
 const sampleNavigation = [
-  { label: 'Home', href: '/', active: true },
-  { label: 'UI Kit', href: '/ui-kit' },
-  { label: 'Design System', href: '/design-system' },
+  { label: 'Главная', href: '/', active: true },
+  { label: 'UI Kit', href: '/ui-kit', active: false },
+  { label: 'Storybook', href: 'https://waldfalke.github.io/fit-lead-test-assignment/', active: false, external: true },
+  { label: 'GitHub', href: 'https://github.com/waldfalke/fit-lead-test-assignment', active: false, external: true },
 ];
 
 // ============================================
