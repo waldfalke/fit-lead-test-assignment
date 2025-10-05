@@ -49,22 +49,22 @@ export const CTA: React.FC<CTAProps> = ({
     : 'text-white/90';
 
   // Padding based on size
-  const padding = size === 'compact' ? 'py-[var(--spacing-12)]' : 'py-[var(--spacing-16)]'; // 48px или 64px
+  const padding = size === 'compact' ? 'py-[var(--spacing-8)] md:py-[var(--spacing-12)]' : 'py-[var(--spacing-12)] md:py-[var(--spacing-16)]';
 
   return (
-    <section className="px-[var(--spacing-8)] py-[var(--spacing-8)]">
-      <div className={`${backgroundStyles[variant]} ${padding} rounded-3xl`}>
-        <div className="container mx-auto px-[var(--spacing-8)]"> {/* 32px */}
-          <div className="max-w-4xl mx-auto text-center space-y-[var(--spacing-12)]"> {/* 48px */}
-            <h2 className={`text-3xl md:text-4xl lg:text-5xl font-bold ${textColor}`}>
+    <section className="px-[var(--spacing-4)] md:px-[var(--spacing-8)] py-[var(--spacing-6)] md:py-[var(--spacing-8)]">
+      <div className={`${backgroundStyles[variant]} ${padding} rounded-2xl md:rounded-3xl`}>
+        <div className="container mx-auto px-[var(--spacing-6)] md:px-[var(--spacing-8)]">
+          <div className="max-w-4xl mx-auto text-center space-y-[var(--spacing-6)] md:space-y-[var(--spacing-8)] lg:space-y-[var(--spacing-12)]">
+            <h2 className={`text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold ${textColor}`}>
               {title}
             </h2>
             {description && (
-              <p className={`text-lg md:text-xl ${subtextColor} max-w-2xl mx-auto`}>
+              <p className={`text-base md:text-lg lg:text-xl ${subtextColor} max-w-2xl mx-auto`}>
                 {description}
               </p>
             )}
-            <div className="flex gap-[var(--spacing-6)] justify-center"> {/* 24px */}
+            <div className="flex flex-col sm:flex-row gap-[var(--spacing-4)] md:gap-[var(--spacing-6)] justify-center"> {/* 24px */}
               <Button
                 variant={variant === 'accent' ? 'primary' : variant === 'subtle' ? 'primary' : 'tonal'}
                 size="lg"

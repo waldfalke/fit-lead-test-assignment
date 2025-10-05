@@ -35,21 +35,21 @@ export const Hero: React.FC<HeroProps> = ({
   };
 
   return (
-    <section className="px-[var(--spacing-8)] py-[var(--spacing-8)]">
+    <section className="px-[var(--spacing-4)] md:px-[var(--spacing-8)] py-[var(--spacing-6)] md:py-[var(--spacing-8)]">
       <div
-        className={`relative min-h-[80vh] max-h-[90vh] flex items-center rounded-3xl ${backgroundStyles[backgroundVariant]}`}
+        className={`relative min-h-[70vh] md:min-h-[80vh] max-h-[90vh] flex items-center rounded-2xl md:rounded-3xl ${backgroundStyles[backgroundVariant]}`}
       >
-        <div className="container mx-auto px-[var(--spacing-12)] md:px-[var(--spacing-16)] py-[var(--spacing-16)]"> {/* 48px mobile, 64px desktop */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-[var(--spacing-12)] items-center"> {/* 48px */}
+        <div className="container mx-auto px-[var(--spacing-6)] md:px-[var(--spacing-12)] lg:px-[var(--spacing-16)] py-[var(--spacing-8)] md:py-[var(--spacing-16)]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-[var(--spacing-8)] md:gap-[var(--spacing-12)] items-center">
           {/* Content */}
-          <div className="space-y-[var(--spacing-12)] text-center lg:text-left"> {/* 48px */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[var(--color-text-on-accent)] leading-tight">
+          <div className="space-y-[var(--spacing-6)] md:space-y-[var(--spacing-8)] lg:space-y-[var(--spacing-12)] text-center lg:text-left">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-[var(--color-text-on-accent)] leading-tight">
               {title}
             </h1>
-            <p className="text-lg md:text-xl lg:text-2xl text-[var(--color-text-on-accent)]/90 max-w-2xl mx-auto lg:mx-0">
+            <p className="text-base md:text-lg lg:text-xl xl:text-2xl text-[var(--color-text-on-accent)]/90 max-w-2xl mx-auto lg:mx-0">
               {subtitle}
             </p>
-            <div className="flex gap-[var(--spacing-6)] justify-center lg:justify-start"> {/* 24px */}
+            <div className="flex flex-col sm:flex-row gap-[var(--spacing-4)] md:gap-[var(--spacing-6)] justify-center lg:justify-start">
               <Button
                 variant="primary"
                 size="lg"
@@ -88,7 +88,7 @@ export const Hero: React.FC<HeroProps> = ({
             </div>
           )}
         </div>
-      </div>
+        </div>
       </div>
     </section>
   );

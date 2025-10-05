@@ -32,21 +32,19 @@ export const Benefits: React.FC<BenefitsProps> = ({
   }[columns];
 
   return (
-    <section className="py-[var(--spacing-16)] bg-[var(--color-surface)]"> {/* 64px - светло-серый фон */}
-      <div className="container mx-auto px-[var(--spacing-8)]"> {/* 32px */}
+    <section className="py-[var(--spacing-12)] md:py-[var(--spacing-16)] bg-[var(--color-surface)]">
+      <div className="container mx-auto px-[var(--spacing-6)] md:px-[var(--spacing-8)]">
         {/* Section Header */}
-        <div className="text-center mb-[var(--spacing-12)] max-w-3xl mx-auto"> {/* 48px */}
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--color-text-primary)] mb-[var(--spacing-6)]"> {/* 24px */}
+        <div className="text-center mb-[var(--spacing-8)] md:mb-[var(--spacing-12)] max-w-3xl mx-auto">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-[var(--color-text-primary)] mb-[var(--spacing-4)] md:mb-[var(--spacing-6)]">
             {title}
           </h2>
           {subtitle && (
-            <p className="text-lg md:text-xl text-[var(--color-text-secondary)]">
+            <p className="text-base md:text-lg lg:text-xl text-[var(--color-text-secondary)]">
               {subtitle}
             </p>
           )}
         </div>
-
-        {/* Benefits Grid */}
         <div className={`grid grid-cols-1 ${gridCols} gap-[var(--spacing-12)]`}> {/* 48px */}
           {benefits.map((benefit, index) => (
             <Card
