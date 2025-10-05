@@ -32,7 +32,7 @@ export const Benefits: React.FC<BenefitsProps> = ({
   }[columns];
 
   return (
-    <section className="py-[var(--spacing-16)] bg-[var(--color-background)]"> {/* 64px */}
+    <section className="py-[var(--spacing-16)] bg-[var(--color-surface)]"> {/* 64px - светло-серый фон */}
       <div className="container mx-auto px-[var(--spacing-8)]"> {/* 32px */}
         {/* Section Header */}
         <div className="text-center mb-[var(--spacing-12)] max-w-3xl mx-auto"> {/* 48px */}

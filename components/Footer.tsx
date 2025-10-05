@@ -24,7 +24,7 @@ export const Footer: React.FC = () => {
   const { theme } = useTheme();
 
   return (
-    <footer className="bg-[var(--color-surface)] border-t border-[var(--color-border)]">
+    <footer className="bg-[var(--color-background)] border-t border-[var(--color-border)] rounded-t-[2rem] mt-[var(--spacing-8)]">
       <div className="container mx-auto px-6 py-12 md:px-8 md:py-16">
         {/* Main Footer Content - Mobile: Column, Desktop: 3 Columns */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 items-center mb-8">

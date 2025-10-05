@@ -48,12 +48,12 @@ export const Card = React.forwardRef<HTMLDivElement, CardProps>(
     // Variant styles - mapped to design tokens
     const variantStyles: Record<typeof variant, string> = {
       default: [
-        'bg-[var(--color-surface)]',
+        'bg-[var(--color-background)]',  // Белый фон
         'border',
         'border-transparent',
       ].join(' '),
       elevated: [
-        'bg-[var(--color-surface)]',
+        'bg-[var(--color-background)]',  // Белый фон для карточек
         'shadow-[var(--shadow-md)]',
         'hover:shadow-[var(--shadow-lg)]',
       ].join(' '),
