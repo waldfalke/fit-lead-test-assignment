@@ -39,7 +39,7 @@ export const Hero: React.FC<HeroProps> = ({
       <div
         className={`relative min-h-[80vh] max-h-[90vh] flex items-center rounded-3xl ${backgroundStyles[backgroundVariant]}`}
       >
-        <div className="container mx-auto px-[var(--spacing-8)] py-[var(--spacing-16)]"> {/* 32px 64px */}
+        <div className="container mx-auto px-[var(--spacing-12)] md:px-[var(--spacing-16)] py-[var(--spacing-16)]"> {/* 48px mobile, 64px desktop */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-[var(--spacing-12)] items-center"> {/* 48px */}
           {/* Content */}
           <div className="space-y-[var(--spacing-12)] text-center lg:text-left"> {/* 48px */}
