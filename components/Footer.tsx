@@ -36,7 +36,7 @@ export const Footer: React.FC = () => {
                 alt="Fit&Lead"
                 width={206}
                 height={54}
-                className="h-12 w-auto"
+                className="h-10 w-auto"
                 priority
               />
             </Link>
