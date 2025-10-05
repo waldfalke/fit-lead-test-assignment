@@ -45,7 +45,7 @@ export const Footer: React.FC = () => {
           {/* Navigation - Same as Header */}
           <Navigation 
             items={SITE_NAVIGATION}
-            variant="footer"
+            variant="header"
             className="flex justify-center gap-8"
           />
 
