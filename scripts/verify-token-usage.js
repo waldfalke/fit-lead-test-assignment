@@ -17,7 +17,7 @@ const glob = require('glob');
 console.log('🔍 Verifying token usage in components, pages, and stories...\n');
 
 // Read design-tokens.json
-const tokensPath = path.join(__dirname, '../docs/design-tokens.json');
+const tokensPath = path.join(__dirname, '../design-tokens/tokens.json');
 const tokens = JSON.parse(fs.readFileSync(tokensPath, 'utf8'));
 
 let errors = 0;
