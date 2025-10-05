@@ -546,7 +546,7 @@ export default function UIKitPage() {
           </h2>
           <p className="text-lg text-white/90 max-w-3xl mx-auto mb-6">
             Every component shown here (Button, Card, Navigation, ThemeToggle) is the exact same component used on the Landing page. 
-            No duplicates, just props and variants. That's the power of component reusability!
+            No duplicates, just props and variants. That&apos;s the power of component reusability!
           </p>
           <div className="flex gap-4 justify-center">
             <Button variant="tonal" href="/">
