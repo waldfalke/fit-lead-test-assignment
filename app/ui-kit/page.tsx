@@ -2,6 +2,8 @@
 
 import { Button } from '@/components/Button';
 import { Card } from '@/components/Card';
+import { ThemeToggle } from '@/components/ThemeToggle';
+import { useTheme } from '@/hooks/useTheme';
 
 /**
  * UI Kit Page - Design System Showcase
@@ -11,25 +13,28 @@ import { Card } from '@/components/Card';
  * - All component variants and states
  * - Design tokens (colors, typography, spacing)
  * - Theme switching capability
+ * - 137 design tokens from tokens.json
  * 
  * Implements CONTRACT-UI-KIT-PAGE-001
  */
 export default function UIKitPage() {
+  const { theme, setTheme } = useTheme();
+
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-[var(--color-background)]">
       {/* Header */}
-      <header className="border-b border-[--color-border] bg-surface">
+      <header className="border-b border-[var(--color-border)] bg-[var(--color-background)] sticky top-0 z-10 backdrop-blur">
         <div className="container mx-auto px-6 py-8">
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-4xl font-bold text-[--color-text-primary] mb-2">
-                UI Kit — Design System
+              <h1 className="text-4xl font-bold text-[var(--color-text-primary)] mb-2">
+                UI Kit — Components & Design Tokens
               </h1>
-              <p className="text-lg text-[--color-text-secondary]">
-                Explore all components, tokens, and design system elements
+              <p className="text-lg text-[var(--color-text-secondary)]">
+                Complete showcase of reusable components and 137 design tokens | Current theme: <span className="font-semibold text-[var(--color-primary)]">{theme}</span>
               </p>
             </div>
-            {/* Theme toggle будет добавлен позже */}
+            <ThemeToggle theme={theme} onToggle={setTheme} />
           </div>
         </div>
       </header>
