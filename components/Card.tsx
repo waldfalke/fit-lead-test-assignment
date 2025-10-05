@@ -38,7 +38,7 @@ export const Card = React.forwardRef<HTMLDivElement, CardProps>(
       'flex-col',
       'gap-[var(--spacing-6)]',  // 24px
       'p-[var(--spacing-8)]',   // 32px
-      'rounded-[2rem]',  // 32px - очень округлые углы как на сайте заказчика
+      'rounded-3xl',  // 24px - rounded corners
       'transition-all',
       'duration-200',
       'min-w-[17.5rem]',  // 280px - минимальная ширина для мобильных

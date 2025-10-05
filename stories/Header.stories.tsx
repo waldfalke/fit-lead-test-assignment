@@ -4,7 +4,9 @@ import { useState } from 'react';
 
 /**
  * Header component stories
- * Implements CONTRACT-HEADER-001 story requirements
+ * 
+ * Main site header with logo, navigation, and theme toggle.
+ * Features responsive mobile menu and sticky positioning.
  */
 const meta = {
   title: 'Components/Header',
@@ -13,7 +15,7 @@ const meta = {
     layout: 'fullscreen',
     docs: {
       description: {
-        component: 'Sticky header with logo, navigation links, and theme toggle. Includes responsive mobile menu with slide-in animation.',
+        component: 'Sticky site header with dynamic logo (theme-aware), Navigation component (reused in Footer), and ThemeToggle. Features responsive mobile menu with slide-in animation. No transparency for clean look.',
       },
     },
   },

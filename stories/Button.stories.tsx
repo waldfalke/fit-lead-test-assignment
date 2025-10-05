@@ -3,7 +3,9 @@ import { Button } from '../components/Button';
 
 /**
  * Button component stories
- * Implements CONTRACT-BUTTON-001 story matrix requirements
+ * 
+ * Versatile button component with 7 variants, 5 sizes, and multiple states.
+ * Used extensively on Landing page (Hero, CTA) and UI Kit page.
  * 
  * Matrix: variants × sizes × states
  * - Variants: primary, secondary, ghost, danger, subtle, link, tonal
@@ -17,7 +19,7 @@ const meta = {
     layout: 'centered',
     docs: {
       description: {
-        component: 'Accessible, themeable button component following Fit&Lead design system. Supports multiple variants, sizes, and states.',
+        component: 'Accessible, theme-aware button component with 7 variants, 5 sizes, and multiple states. Used on Landing (Hero CTA, CTA section) and UI Kit pages. Supports icons, loading state, and works as link or button.',
       },
     },
   },
@@ -40,6 +42,10 @@ const meta = {
     loading: {
       control: 'boolean',
       description: 'Loading state with spinner',
+    },
+    href: {
+      control: 'text',
+      description: 'URL for link button (uses Next.js Link)',
     },
   },
 } satisfies Meta<typeof Button>;

@@ -37,7 +37,7 @@ export const Hero: React.FC<HeroProps> = ({
   return (
     <section className="px-[var(--spacing-4)] md:px-[var(--spacing-8)] py-[var(--spacing-6)] md:py-[var(--spacing-8)]">
       <div
-        className={`relative min-h-[70vh] md:min-h-[80vh] max-h-[90vh] flex items-center rounded-2xl md:rounded-3xl ${backgroundStyles[backgroundVariant]}`}
+        className={`relative min-h-[70vh] md:min-h-[80vh] max-h-[90vh] flex items-center rounded-[2rem] md:rounded-[2.5rem] ${backgroundStyles[backgroundVariant]}`}
       >
         <div className="container mx-auto px-[var(--spacing-6)] md:px-[var(--spacing-12)] lg:px-[var(--spacing-16)] py-[var(--spacing-8)] md:py-[var(--spacing-16)]">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-[var(--spacing-8)] md:gap-[var(--spacing-12)] items-center">

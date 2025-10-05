@@ -4,7 +4,9 @@ import { useState } from 'react';
 
 /**
  * ThemeToggle component stories
- * Implements CONTRACT-HEADER-001 ThemeToggle story requirements
+ * 
+ * Light/Dark theme switcher used in Header and demonstrated in UI Kit.
+ * Features sun/moon icons and smooth transitions.
  */
 const meta = {
   title: 'Components/ThemeToggle',
@@ -13,7 +15,7 @@ const meta = {
     layout: 'centered',
     docs: {
       description: {
-        component: 'Theme toggle with sun/moon icons. Two ghost buttons for switching between light and dark themes.',
+        component: 'Theme toggle component with sun/moon icons. Two ghost buttons for switching between light and dark themes. Used in site Header and shown in UI Kit page. Works with next-themes provider for persistent theme preference.',
       },
     },
   },

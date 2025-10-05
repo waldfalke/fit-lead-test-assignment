@@ -203,7 +203,7 @@ export default function UIKitPage() {
               <h3 className="text-xl font-semibold text-[var(--color-text-primary)] mb-4">
                 Header Navigation (with underline animation)
               </h3>
-              <div className="bg-[var(--color-background)] p-6 rounded-[2rem]">
+              <div className="bg-[var(--color-background)] p-6 rounded-3xl">
                 <Navigation 
                   items={SITE_NAVIGATION}
                   variant="header"
@@ -217,7 +217,7 @@ export default function UIKitPage() {
               <h3 className="text-xl font-semibold text-[var(--color-text-primary)] mb-4">
                 Mobile Navigation (with borders)
               </h3>
-              <div className="bg-[var(--color-background)] p-6 rounded-[2rem] max-w-sm">
+              <div className="bg-[var(--color-background)] p-6 rounded-3xl max-w-sm">
                 <Navigation 
                   items={SITE_NAVIGATION}
                   variant="mobile"
@@ -246,7 +246,7 @@ export default function UIKitPage() {
                 Brand Logos
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="bg-[var(--color-background)] p-8 rounded-[2rem] flex flex-col items-center gap-4">
+                <div className="bg-[var(--color-background)] p-8 rounded-3xl flex flex-col items-center gap-4">
                   <Image
                     src="/logo.svg"
                     alt="Fit&Lead Logo Light"
@@ -256,7 +256,7 @@ export default function UIKitPage() {
                   />
                   <p className="text-sm text-[var(--color-text-secondary)]">Main Logo (Light theme)</p>
                 </div>
-                <div className="bg-[var(--color-background)] p-8 rounded-[2rem] flex flex-col items-center gap-4">
+                <div className="bg-[var(--color-background)] p-8 rounded-3xl flex flex-col items-center gap-4">
                   <Image
                     src="/logo-dark.svg"
                     alt="Fit&Lead Logo Dark"
@@ -274,7 +274,7 @@ export default function UIKitPage() {
               <h3 className="text-xl font-semibold text-[var(--color-text-primary)] mb-4">
                 Social Media Icons
               </h3>
-              <div className="bg-[var(--color-background)] p-8 rounded-[2rem]">
+              <div className="bg-[var(--color-background)] p-8 rounded-3xl">
                 <div className="flex gap-4 justify-center">
                   <div className="text-center space-y-2">
                     <div className="flex justify-center">
@@ -312,7 +312,7 @@ export default function UIKitPage() {
               <h3 className="text-xl font-semibold text-[var(--color-text-primary)] mb-4">
                 Theme Toggle
               </h3>
-              <div className="bg-[var(--color-background)] p-8 rounded-[2rem] flex flex-col items-center gap-4">
+              <div className="bg-[var(--color-background)] p-8 rounded-3xl flex flex-col items-center gap-4">
                 <ThemeToggle theme={theme} onToggle={setTheme} />
                 <p className="text-sm text-[var(--color-text-secondary)]">Current theme: <span className="font-semibold text-[var(--color-primary)]">{theme}</span></p>
               </div>
@@ -540,7 +540,7 @@ export default function UIKitPage() {
         {/* ============================================
             Component Reusability Note
             ============================================ */}
-        <section className="bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-primary)]/80 rounded-[2rem] p-12 text-center">
+        <section className="bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-primary)]/80 rounded-[2.5rem] p-12 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">
             🎯 All Components Are Reused
           </h2>

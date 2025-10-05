@@ -4,13 +4,15 @@ import { TrendingUpIcon, HeadphonesIcon, ZapIcon, BarChart3Icon } from '../compo
 
 /**
  * Card component stories
- * Implements CONTRACT-CARD-001 story requirements
  * 
- * Demonstrates:
- * - All variants: default, elevated, outlined
- * - With/without icons (using Lucide React icons)
+ * Flexible content card component used in Benefits section (Landing page) and UI Kit.
+ * Uses the same icons (TrendingUp, Headphones, Zap, BarChart3) on both pages.
+ * 
+ * Features:
+ * - 3 variants: default, elevated, outlined
+ * - With/without icons (Lucide React icons)
  * - Interactive cards (href, onClick)
- * - Different content lengths
+ * - Rounded corners (32px) and responsive
  */
 const meta = {
   title: 'Components/Card',
@@ -19,7 +21,7 @@ const meta = {
     layout: 'centered',
     docs: {
       description: {
-        component: 'Reusable content card for benefits, features, and content grids. Supports multiple variants and interactive states.',
+        component: 'Reusable content card component with 3 variants. Used in Benefits section (Landing) and UI Kit page. Supports icons, semantic heading levels, and interactive states (clickable, linkable). Features highly rounded corners (2rem) and no max-width for flexible layouts.',
       },
     },
   },

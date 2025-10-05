@@ -53,7 +53,7 @@ export const CTA: React.FC<CTAProps> = ({
 
   return (
     <section className="px-[var(--spacing-4)] md:px-[var(--spacing-8)] py-[var(--spacing-6)] md:py-[var(--spacing-8)]">
-      <div className={`${backgroundStyles[variant]} ${padding} rounded-2xl md:rounded-3xl`}>
+      <div className={`${backgroundStyles[variant]} ${padding} rounded-[2rem] md:rounded-[2.5rem]`}>
         <div className="container mx-auto px-[var(--spacing-6)] md:px-[var(--spacing-8)]">
           <div className="max-w-4xl mx-auto text-center space-y-[var(--spacing-6)] md:space-y-[var(--spacing-8)] lg:space-y-[var(--spacing-12)]">
             <h2 className={`text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold ${textColor}`}>
