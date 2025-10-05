@@ -38,12 +38,11 @@ export const Card = React.forwardRef<HTMLDivElement, CardProps>(
       'flex-col',
       'gap-[var(--spacing-6)]',  // 24px
       'p-[var(--spacing-8)]',   // 32px
-      'rounded-[var(--radius-lg)]',  // 8px
+      'rounded-[2rem]',  // 32px - очень округлые углы как на сайте заказчика
       'transition-all',
       'duration-200',
       'min-w-[17.5rem]',  // 280px - минимальная ширина для мобильных
-      'max-w-[25rem]',    // 400px - максимальная ширина для читаемости
-      'w-full',  // Занимает всю доступную ширину в пределах max-w
+      'w-full',  // Занимает всю доступную ширину
     ].join(' ');
 
     // Variant styles - mapped to design tokens
