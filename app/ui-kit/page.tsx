@@ -6,6 +6,7 @@ import { ThemeToggle } from '@/components/ThemeToggle';
 import { Navigation } from '@/components/Navigation';
 import { useTheme } from '@/hooks/useTheme';
 import { SITE_NAVIGATION } from '@/config/navigation';
+import { TrendingUpIcon, HeadphonesIcon, ZapIcon, BarChart3Icon } from '@/components/icons';
 import Image from 'next/image';
 
 /**
@@ -143,34 +144,21 @@ export default function UIKitPage() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <Card
                   variant="default"
-                  icon={
-                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" className="text-[var(--color-primary)]">
-                      <rect width="48" height="48" rx="8" fill="currentColor" opacity="0.1" />
-                      <path d="M24 14L28 22H20L24 14Z M24 26L20 34H28L24 26Z" fill="currentColor" />
-                    </svg>
-                  }
-                  title="Default Card"
-                  description="Subtle background for content grids and feature showcases."
+                  icon={<TrendingUpIcon size={48} className="text-primary" />}
+                  title="Высокие выплаты"
+                  description="Конкурентные ставки и прозрачная система вознаграждений для всех партнёров"
                 />
                 <Card
                   variant="elevated"
-                  icon={
-                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" className="text-[var(--color-primary)]">
-                      <path d="M24 8C24 8 8 18 8 28C8 34 12 38 16 38C19 38 22 36 24 33C26 36 29 38 32 38C36 38 40 34 40 28C40 18 24 8 24 8Z" fill="currentColor" opacity="0.2" stroke="currentColor" strokeWidth="2" />
-                    </svg>
-                  }
-                  title="Elevated Card"
-                  description="Shadow effect provides visual prominence and depth."
+                  icon={<HeadphonesIcon size={48} className="text-primary" />}
+                  title="Поддержка 24/7"
+                  description="Персональный менеджер и техническая поддержка в любое время суток"
                 />
                 <Card
                   variant="outlined"
-                  icon={
-                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" className="text-[var(--color-primary)]">
-                      <path d="M24 8L28 20L40 20L30 28L34 40L24 32L14 40L18 28L8 20L20 20L24 8Z" fill="currentColor" opacity="0.2" stroke="currentColor" strokeWidth="2" />
-                    </svg>
-                  }
-                  title="Outlined Card"
-                  description="Border style for minimal look on colored backgrounds."
+                  icon={<ZapIcon size={48} className="text-primary" />}
+                  title="Быстрые выплаты"
+                  description="Еженедельные выплаты без задержек и минимальных порогов"
                 />
               </div>
             </div>
@@ -183,20 +171,15 @@ export default function UIKitPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Card
                   variant="elevated"
-                  icon={
-                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" className="text-[var(--color-primary)]">
-                      <rect width="48" height="48" rx="8" fill="currentColor" opacity="0.1" />
-                      <path d="M24 14L28 22H20L24 14Z M24 26L20 34H28L24 26Z" fill="currentColor" />
-                    </svg>
-                  }
-                  title="Clickable Card"
-                  description="Hover to see interactive effects. Cards can be links or buttons."
+                  icon={<BarChart3Icon size={48} className="text-primary" />}
+                  title="Удобные инструменты"
+                  description="Современная платформа с детальной аналитикой и отчётностью. Нажмите чтобы увидеть интерактивность."
                   onClick={() => alert('Card clicked!')}
                 />
                 <Card
                   variant="default"
-                  title="Without Icon"
-                  description="Cards work great without icons too, focusing on text content."
+                  title="Без иконки"
+                  description="Карточки отлично работают и без иконок, фокусируясь на текстовом контенте."
                 />
               </div>
             </div>
