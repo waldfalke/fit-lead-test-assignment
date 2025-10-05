@@ -25,7 +25,7 @@ export default function UIKitPage() {
   const { theme, setTheme } = useTheme();
 
   return (
-    <div className="min-h-screen bg-[var(--color-background)]">
+    <div className="min-h-screen bg-[var(--color-surface)]">
       {/* Header */}
       <header className="border-b border-[var(--color-border)] bg-[var(--color-background)]">
         <div className="container mx-auto px-6 py-8">
@@ -203,7 +203,7 @@ export default function UIKitPage() {
               <h3 className="text-xl font-semibold text-[var(--color-text-primary)] mb-4">
                 Header Navigation (with underline animation)
               </h3>
-              <div className="bg-[var(--color-surface)] p-6 rounded-[2rem]">
+              <div className="bg-[var(--color-background)] p-6 rounded-[2rem]">
                 <Navigation 
                   items={SITE_NAVIGATION}
                   variant="header"
@@ -217,7 +217,7 @@ export default function UIKitPage() {
               <h3 className="text-xl font-semibold text-[var(--color-text-primary)] mb-4">
                 Mobile Navigation (with borders)
               </h3>
-              <div className="bg-[var(--color-surface)] p-6 rounded-[2rem] max-w-sm">
+              <div className="bg-[var(--color-background)] p-6 rounded-[2rem] max-w-sm">
                 <Navigation 
                   items={SITE_NAVIGATION}
                   variant="mobile"
@@ -246,7 +246,7 @@ export default function UIKitPage() {
                 Brand Logos
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="bg-[var(--color-surface)] p-8 rounded-[2rem] flex flex-col items-center gap-4">
+                <div className="bg-[var(--color-background)] p-8 rounded-[2rem] flex flex-col items-center gap-4">
                   <Image
                     src="/logo.svg"
                     alt="Fit&Lead Logo Light"
@@ -256,7 +256,7 @@ export default function UIKitPage() {
                   />
                   <p className="text-sm text-[var(--color-text-secondary)]">Main Logo (Light theme)</p>
                 </div>
-                <div className="bg-[var(--color-surface)] p-8 rounded-[2rem] flex flex-col items-center gap-4">
+                <div className="bg-[var(--color-background)] p-8 rounded-[2rem] flex flex-col items-center gap-4">
                   <Image
                     src="/logo-dark.svg"
                     alt="Fit&Lead Logo Dark"
@@ -274,7 +274,7 @@ export default function UIKitPage() {
               <h3 className="text-xl font-semibold text-[var(--color-text-primary)] mb-4">
                 Social Media Icons
               </h3>
-              <div className="bg-[var(--color-surface)] p-8 rounded-[2rem]">
+              <div className="bg-[var(--color-background)] p-8 rounded-[2rem]">
                 <div className="flex gap-4 justify-center">
                   <div className="text-center space-y-2">
                     <div className="flex justify-center">
@@ -312,7 +312,7 @@ export default function UIKitPage() {
               <h3 className="text-xl font-semibold text-[var(--color-text-primary)] mb-4">
                 Theme Toggle
               </h3>
-              <div className="bg-[var(--color-surface)] p-8 rounded-[2rem] flex flex-col items-center gap-4">
+              <div className="bg-[var(--color-background)] p-8 rounded-[2rem] flex flex-col items-center gap-4">
                 <ThemeToggle theme={theme} onToggle={setTheme} />
                 <p className="text-sm text-[var(--color-text-secondary)]">Current theme: <span className="font-semibold text-[var(--color-primary)]">{theme}</span></p>
               </div>
@@ -411,7 +411,7 @@ export default function UIKitPage() {
             Type scale based on Public Sans font family
           </p>
 
-          <div className="space-y-6 bg-[var(--color-surface)] p-8 rounded-lg">
+          <div className="space-y-6 bg-[var(--color-background)] p-8 rounded-lg">
             <div className="border-b border-[var(--color-border)] pb-4">
               <p className="text-4xl font-bold text-[var(--color-text-primary)]">
                 Heading 1 — 46px / Bold
@@ -479,7 +479,7 @@ export default function UIKitPage() {
             8px-based spacing system for consistent layouts
           </p>
 
-          <div className="space-y-4 bg-[var(--color-surface)] p-8 rounded-lg">
+          <div className="space-y-4 bg-[var(--color-background)] p-8 rounded-lg">
             {[
               { name: 'xs', value: '8px', rem: '0.5rem' },
               { name: 'sm', value: '16px', rem: '1rem' },
