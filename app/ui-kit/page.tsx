@@ -144,19 +144,19 @@ export default function UIKitPage() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <Card
                   variant="default"
-                  icon={<TrendingUpIcon size={48} className="text-primary" />}
+                  icon={<TrendingUpIcon size={48} className="text-[var(--color-primary)]" />}
                   title="Высокие выплаты"
                   description="Конкурентные ставки и прозрачная система вознаграждений для всех партнёров"
                 />
                 <Card
                   variant="elevated"
-                  icon={<HeadphonesIcon size={48} className="text-primary" />}
+                  icon={<HeadphonesIcon size={48} className="text-[var(--color-primary)]" />}
                   title="Поддержка 24/7"
                   description="Персональный менеджер и техническая поддержка в любое время суток"
                 />
                 <Card
                   variant="outlined"
-                  icon={<ZapIcon size={48} className="text-primary" />}
+                  icon={<ZapIcon size={48} className="text-[var(--color-primary)]" />}
                   title="Быстрые выплаты"
                   description="Еженедельные выплаты без задержек и минимальных порогов"
                 />
@@ -171,7 +171,7 @@ export default function UIKitPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Card
                   variant="elevated"
-                  icon={<BarChart3Icon size={48} className="text-primary" />}
+                  icon={<BarChart3Icon size={48} className="text-[var(--color-primary)]" />}
                   title="Удобные инструменты"
                   description="Современная платформа с детальной аналитикой и отчётностью. Нажмите чтобы увидеть интерактивность."
                   onClick={() => alert('Card clicked!')}
