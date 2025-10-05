@@ -44,17 +44,17 @@ export default function UIKitPage() {
             Buttons Section
             ============================================ */}
         <section>
-          <h2 className="text-3xl font-bold text-[--color-text-primary] mb-6">
+          <h2 className="text-3xl font-bold text-[var(--color-text-primary)] mb-6">
             Buttons
           </h2>
-          <p className="text-lg text-[--color-text-secondary] mb-8">
+          <p className="text-lg text-[var(--color-text-secondary)] mb-8">
             Versatile button component with 7 variants, 5 sizes, and multiple states
           </p>
 
           {/* Variants */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-xl font-semibold text-[--color-text-primary] mb-4">
+              <h3 className="text-xl font-semibold text-[var(--color-text-primary)] mb-4">
                 Variants
               </h3>
               <div className="flex flex-wrap gap-4">
@@ -70,7 +70,7 @@ export default function UIKitPage() {
 
             {/* Sizes */}
             <div>
-              <h3 className="text-xl font-semibold text-[--color-text-primary] mb-4">
+              <h3 className="text-xl font-semibold text-[var(--color-text-primary)] mb-4">
                 Sizes
               </h3>
               <div className="flex flex-wrap items-center gap-4">
@@ -84,7 +84,7 @@ export default function UIKitPage() {
 
             {/* States */}
             <div>
-              <h3 className="text-xl font-semibold text-[--color-text-primary] mb-4">
+              <h3 className="text-xl font-semibold text-[var(--color-text-primary)] mb-4">
                 States
               </h3>
               <div className="flex flex-wrap gap-4">
@@ -96,7 +96,7 @@ export default function UIKitPage() {
 
             {/* With Icons */}
             <div>
-              <h3 className="text-xl font-semibold text-[--color-text-primary] mb-4">
+              <h3 className="text-xl font-semibold text-[var(--color-text-primary)] mb-4">
                 With Icons
               </h3>
               <div className="flex flex-wrap gap-4">
@@ -127,24 +127,24 @@ export default function UIKitPage() {
             Cards Section
             ============================================ */}
         <section>
-          <h2 className="text-3xl font-bold text-[--color-text-primary] mb-6">
+          <h2 className="text-3xl font-bold text-[var(--color-text-primary)] mb-6">
             Cards
           </h2>
-          <p className="text-lg text-[--color-text-secondary] mb-8">
+          <p className="text-lg text-[var(--color-text-secondary)] mb-8">
             Flexible content cards for benefits, features, and content grids
           </p>
 
           <div className="space-y-8">
             {/* Variants */}
             <div>
-              <h3 className="text-xl font-semibold text-[--color-text-primary] mb-4">
+              <h3 className="text-xl font-semibold text-[var(--color-text-primary)] mb-4">
                 Variants
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <Card
                   variant="default"
                   icon={
-                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" className="text-primary">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" className="text-[var(--color-primary)]">
                       <rect width="48" height="48" rx="8" fill="currentColor" opacity="0.1" />
                       <path d="M24 14L28 22H20L24 14Z M24 26L20 34H28L24 26Z" fill="currentColor" />
                     </svg>
@@ -155,7 +155,7 @@ export default function UIKitPage() {
                 <Card
                   variant="elevated"
                   icon={
-                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" className="text-primary">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" className="text-[var(--color-primary)]">
                       <path d="M24 8C24 8 8 18 8 28C8 34 12 38 16 38C19 38 22 36 24 33C26 36 29 38 32 38C36 38 40 34 40 28C40 18 24 8 24 8Z" fill="currentColor" opacity="0.2" stroke="currentColor" strokeWidth="2" />
                     </svg>
                   }
@@ -165,7 +165,7 @@ export default function UIKitPage() {
                 <Card
                   variant="outlined"
                   icon={
-                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" className="text-primary">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" className="text-[var(--color-primary)]">
                       <path d="M24 8L28 20L40 20L30 28L34 40L24 32L14 40L18 28L8 20L20 20L24 8Z" fill="currentColor" opacity="0.2" stroke="currentColor" strokeWidth="2" />
                     </svg>
                   }
@@ -177,14 +177,14 @@ export default function UIKitPage() {
 
             {/* Interactive Cards */}
             <div>
-              <h3 className="text-xl font-semibold text-[--color-text-primary] mb-4">
+              <h3 className="text-xl font-semibold text-[var(--color-text-primary)] mb-4">
                 Interactive Cards
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Card
                   variant="elevated"
                   icon={
-                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" className="text-primary">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" className="text-[var(--color-primary)]">
                       <rect width="48" height="48" rx="8" fill="currentColor" opacity="0.1" />
                       <path d="M24 14L28 22H20L24 14Z M24 26L20 34H28L24 26Z" fill="currentColor" />
                     </svg>
@@ -207,36 +207,36 @@ export default function UIKitPage() {
             Colors Section
             ============================================ */}
         <section>
-          <h2 className="text-3xl font-bold text-[--color-text-primary] mb-6">
+          <h2 className="text-3xl font-bold text-[var(--color-text-primary)] mb-6">
             Color Palette
           </h2>
-          <p className="text-lg text-[--color-text-secondary] mb-8">
+          <p className="text-lg text-[var(--color-text-secondary)] mb-8">
             Design tokens extracted from Fit&Lead brand guidelines
           </p>
 
           <div className="space-y-8">
             {/* Brand Colors */}
             <div>
-              <h3 className="text-xl font-semibold text-[--color-text-primary] mb-4">
+              <h3 className="text-xl font-semibold text-[var(--color-text-primary)] mb-4">
                 Brand Colors
               </h3>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div className="space-y-2">
-                  <div className="h-24 rounded-lg bg-primary shadow-md"></div>
-                  <p className="text-sm font-medium text-[--color-text-primary]">Primary</p>
-                  <p className="text-xs text-[--color-text-secondary] font-mono">#00484F</p>
+                  <div className="h-24 rounded-lg bg-[var(--color-primary)] shadow-md"></div>
+                  <p className="text-sm font-medium text-[var(--color-text-primary)]">Primary</p>
+                  <p className="text-xs text-[var(--color-text-secondary)] font-mono">#00484F</p>
                 </div>
                 <div className="space-y-2">
-                  <div className="h-24 rounded-lg bg-accent shadow-md"></div>
-                  <p className="text-sm font-medium text-[--color-text-primary]">Accent</p>
-                  <p className="text-xs text-[--color-text-secondary] font-mono">#FBEA1B</p>
+                  <div className="h-24 rounded-lg bg-[var(--color-accent)] shadow-md"></div>
+                  <p className="text-sm font-medium text-[var(--color-text-primary)]">Accent</p>
+                  <p className="text-xs text-[var(--color-text-secondary)] font-mono">#FBEA1B</p>
                 </div>
               </div>
             </div>
 
             {/* Neutral Colors */}
             <div>
-              <h3 className="text-xl font-semibold text-[--color-text-primary] mb-4">
+              <h3 className="text-xl font-semibold text-[var(--color-text-primary)] mb-4">
                 Neutral Colors
               </h3>
               <div className="grid grid-cols-5 md:grid-cols-10 gap-2">
@@ -246,7 +246,7 @@ export default function UIKitPage() {
                       className="h-16 rounded-lg shadow-sm"
                       style={{ backgroundColor: `var(--color-neutral-${shade})` }}
                     ></div>
-                    <p className="text-xs text-center text-[--color-text-secondary]">{shade}</p>
+                    <p className="text-xs text-center text-[var(--color-text-secondary)]">{shade}</p>
                   </div>
                 ))}
               </div>
@@ -254,29 +254,29 @@ export default function UIKitPage() {
 
             {/* Semantic Colors */}
             <div>
-              <h3 className="text-xl font-semibold text-[--color-text-primary] mb-4">
+              <h3 className="text-xl font-semibold text-[var(--color-text-primary)] mb-4">
                 Semantic Colors
               </h3>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div className="space-y-2">
-                  <div className="h-24 rounded-lg bg-[--color-success] shadow-md"></div>
-                  <p className="text-sm font-medium text-[--color-text-primary]">Success</p>
-                  <p className="text-xs text-[--color-text-secondary] font-mono">#28c76f</p>
+                  <div className="h-24 rounded-lg bg-[var(--color-success)] shadow-md"></div>
+                  <p className="text-sm font-medium text-[var(--color-text-primary)]">Success</p>
+                  <p className="text-xs text-[var(--color-text-secondary)] font-mono">#28c76f</p>
                 </div>
                 <div className="space-y-2">
-                  <div className="h-24 rounded-lg bg-[--color-warning] shadow-md"></div>
-                  <p className="text-sm font-medium text-[--color-text-primary]">Warning</p>
-                  <p className="text-xs text-[--color-text-secondary] font-mono">#ff9f43</p>
+                  <div className="h-24 rounded-lg bg-[var(--color-warning)] shadow-md"></div>
+                  <p className="text-sm font-medium text-[var(--color-text-primary)]">Warning</p>
+                  <p className="text-xs text-[var(--color-text-secondary)] font-mono">#ff9f43</p>
                 </div>
                 <div className="space-y-2">
-                  <div className="h-24 rounded-lg bg-[--color-danger] shadow-md"></div>
-                  <p className="text-sm font-medium text-[--color-text-primary]">Danger</p>
-                  <p className="text-xs text-[--color-text-secondary] font-mono">#ff4c51</p>
+                  <div className="h-24 rounded-lg bg-[var(--color-danger)] shadow-md"></div>
+                  <p className="text-sm font-medium text-[var(--color-text-primary)]">Danger</p>
+                  <p className="text-xs text-[var(--color-text-secondary)] font-mono">#ff4c51</p>
                 </div>
                 <div className="space-y-2">
-                  <div className="h-24 rounded-lg bg-[--color-info] shadow-md"></div>
-                  <p className="text-sm font-medium text-[--color-text-primary]">Info</p>
-                  <p className="text-xs text-[--color-text-secondary] font-mono">#00bad1</p>
+                  <div className="h-24 rounded-lg bg-[var(--color-info)] shadow-md"></div>
+                  <p className="text-sm font-medium text-[var(--color-text-primary)]">Info</p>
+                  <p className="text-xs text-[var(--color-text-secondary)] font-mono">#00bad1</p>
                 </div>
               </div>
             </div>
@@ -287,64 +287,64 @@ export default function UIKitPage() {
             Typography Section
             ============================================ */}
         <section>
-          <h2 className="text-3xl font-bold text-[--color-text-primary] mb-6">
+          <h2 className="text-3xl font-bold text-[var(--color-text-primary)] mb-6">
             Typography
           </h2>
-          <p className="text-lg text-[--color-text-secondary] mb-8">
+          <p className="text-lg text-[var(--color-text-secondary)] mb-8">
             Type scale based on Public Sans font family
           </p>
 
-          <div className="space-y-6 bg-surface p-8 rounded-lg">
-            <div className="border-b border-[--color-border] pb-4">
-              <p className="text-4xl font-bold text-[--color-text-primary]">
+          <div className="space-y-6 bg-[var(--color-surface)] p-8 rounded-lg">
+            <div className="border-b border-[var(--color-border)] pb-4">
+              <p className="text-4xl font-bold text-[var(--color-text-primary)]">
                 Heading 1 — 46px / Bold
               </p>
-              <p className="text-sm text-[--color-text-secondary] mt-2 font-mono">
+              <p className="text-sm text-[var(--color-text-secondary)] mt-2 font-mono">
                 font-size: 2.875rem (46px) | font-weight: 700 | line-height: 1.25
               </p>
             </div>
 
-            <div className="border-b border-[--color-border] pb-4">
-              <p className="text-3xl font-bold text-[--color-text-primary]">
+            <div className="border-b border-[var(--color-border)] pb-4">
+              <p className="text-3xl font-bold text-[var(--color-text-primary)]">
                 Heading 2 — 38px / Bold
               </p>
-              <p className="text-sm text-[--color-text-secondary] mt-2 font-mono">
+              <p className="text-sm text-[var(--color-text-secondary)] mt-2 font-mono">
                 font-size: 2.375rem (38px) | font-weight: 700 | line-height: 1.25
               </p>
             </div>
 
-            <div className="border-b border-[--color-border] pb-4">
-              <p className="text-2xl font-bold text-[--color-text-primary]">
+            <div className="border-b border-[var(--color-border)] pb-4">
+              <p className="text-2xl font-bold text-[var(--color-text-primary)]">
                 Heading 3 — 28px / Bold
               </p>
-              <p className="text-sm text-[--color-text-secondary] mt-2 font-mono">
+              <p className="text-sm text-[var(--color-text-secondary)] mt-2 font-mono">
                 font-size: 1.75rem (28px) | font-weight: 700 | line-height: 1.25
               </p>
             </div>
 
-            <div className="border-b border-[--color-border] pb-4">
-              <p className="text-lg font-medium text-[--color-text-primary]">
+            <div className="border-b border-[var(--color-border)] pb-4">
+              <p className="text-lg font-medium text-[var(--color-text-primary)]">
                 Body Large — 18px / Medium
               </p>
-              <p className="text-sm text-[--color-text-secondary] mt-2 font-mono">
+              <p className="text-sm text-[var(--color-text-secondary)] mt-2 font-mono">
                 font-size: 1.125rem (18px) | font-weight: 500 | line-height: 1.375
               </p>
             </div>
 
-            <div className="border-b border-[--color-border] pb-4">
-              <p className="text-base text-[--color-text-primary]">
+            <div className="border-b border-[var(--color-border)] pb-4">
+              <p className="text-base text-[var(--color-text-primary)]">
                 Body — 15px / Regular
               </p>
-              <p className="text-sm text-[--color-text-secondary] mt-2 font-mono">
+              <p className="text-sm text-[var(--color-text-secondary)] mt-2 font-mono">
                 font-size: 0.9375rem (15px) | font-weight: 400 | line-height: 1.375
               </p>
             </div>
 
             <div>
-              <p className="text-sm text-[--color-text-secondary]">
+              <p className="text-sm text-[var(--color-text-secondary)]">
                 Small — 13px / Regular
               </p>
-              <p className="text-xs text-[--color-text-secondary] mt-2 font-mono">
+              <p className="text-xs text-[var(--color-text-secondary)] mt-2 font-mono">
                 font-size: 0.8125rem (13px) | font-weight: 400 | line-height: 1.375
               </p>
             </div>
@@ -355,14 +355,14 @@ export default function UIKitPage() {
             Spacing Section
             ============================================ */}
         <section>
-          <h2 className="text-3xl font-bold text-[--color-text-primary] mb-6">
+          <h2 className="text-3xl font-bold text-[var(--color-text-primary)] mb-6">
             Spacing Scale
           </h2>
-          <p className="text-lg text-[--color-text-secondary] mb-8">
+          <p className="text-lg text-[var(--color-text-secondary)] mb-8">
             8px-based spacing system for consistent layouts
           </p>
 
-          <div className="space-y-4 bg-surface p-8 rounded-lg">
+          <div className="space-y-4 bg-[var(--color-surface)] p-8 rounded-lg">
             {[
               { name: 'xs', value: '8px', rem: '0.5rem' },
               { name: 'sm', value: '16px', rem: '1rem' },
@@ -372,14 +372,14 @@ export default function UIKitPage() {
               { name: '2xl', value: '64px', rem: '4rem' },
             ].map((spacing) => (
               <div key={spacing.name} className="flex items-center gap-4">
-                <div className="w-20 text-sm font-mono text-[--color-text-primary]">
+                <div className="w-20 text-sm font-mono text-[var(--color-text-primary)]">
                   {spacing.name}
                 </div>
                 <div
-                  className="bg-primary h-8 rounded"
+                  className="bg-[var(--color-primary)] h-8 rounded"
                   style={{ width: spacing.value }}
                 ></div>
-                <div className="text-sm text-[--color-text-secondary]">
+                <div className="text-sm text-[var(--color-text-secondary)]">
                   {spacing.value} ({spacing.rem})
                 </div>
               </div>
@@ -391,10 +391,10 @@ export default function UIKitPage() {
             Border Radius Section
             ============================================ */}
         <section>
-          <h2 className="text-3xl font-bold text-[--color-text-primary] mb-6">
+          <h2 className="text-3xl font-bold text-[var(--color-text-primary)] mb-6">
             Border Radius
           </h2>
-          <p className="text-lg text-[--color-text-secondary] mb-8">
+          <p className="text-lg text-[var(--color-text-secondary)] mb-8">
             Consistent corner rounding for UI elements
           </p>
 
@@ -408,11 +408,11 @@ export default function UIKitPage() {
               { name: 'full', value: '9999px', class: 'rounded-full' },
             ].map((radius) => (
               <div key={radius.name} className="space-y-2">
-                <div className={`h-24 bg-primary ${radius.class}`}></div>
-                <p className="text-sm font-medium text-[--color-text-primary]">
+                <div className={`h-24 bg-[var(--color-primary)] ${radius.class}`}></div>
+                <p className="text-sm font-medium text-[var(--color-text-primary)]">
                   {radius.name}
                 </p>
-                <p className="text-xs text-[--color-text-secondary] font-mono">
+                <p className="text-xs text-[var(--color-text-secondary)] font-mono">
                   {radius.value}
                 </p>
               </div>
@@ -422,9 +422,9 @@ export default function UIKitPage() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-[--color-border] bg-surface mt-16">
+      <footer className="border-t border-[var(--color-border)] bg-[var(--color-surface)] mt-16">
         <div className="container mx-auto px-6 py-8">
-          <p className="text-center text-sm text-[--color-text-secondary]">
+          <p className="text-center text-sm text-[var(--color-text-secondary)]">
             UI Kit — Fit&Lead Design System | Built with Next.js + Tailwind CSS v4
           </p>
         </div>
