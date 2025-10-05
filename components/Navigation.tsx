@@ -70,7 +70,9 @@ export const Navigation: React.FC<NavigationProps> = ({
   return (
     <nav className={className} aria-label="Navigation">
       {items.map((item) => {
-        const linkClasses = `${baseLinkClasses} ${linkClassName} ${
+        // Hide external links on mobile (show only on md+)
+        const mobileHideClass = item.external ? 'hidden md:inline-flex' : '';
+        const linkClasses = `${baseLinkClasses} ${linkClassName} ${mobileHideClass} ${
           item.active ? 'after:w-full after:left-0 text-[var(--color-primary)]' : ''
         }`.trim();
 

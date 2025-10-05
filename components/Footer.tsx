@@ -46,7 +46,7 @@ export const Footer: React.FC = () => {
           <Navigation 
             items={SITE_NAVIGATION}
             variant="header"
-            className="flex justify-center gap-8"
+            className="flex flex-wrap justify-center gap-4 md:gap-8"
           />
 
           {/* Social Links - Mobile: Center, Desktop: Right */}
