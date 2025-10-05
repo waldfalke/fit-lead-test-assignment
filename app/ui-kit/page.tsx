@@ -3,7 +3,10 @@
 import { Button } from '@/components/Button';
 import { Card } from '@/components/Card';
 import { ThemeToggle } from '@/components/ThemeToggle';
+import { Navigation } from '@/components/Navigation';
 import { useTheme } from '@/hooks/useTheme';
+import { SITE_NAVIGATION } from '@/config/navigation';
+import Image from 'next/image';
 
 /**
  * UI Kit Page - Design System Showcase
@@ -23,18 +26,15 @@ export default function UIKitPage() {
   return (
     <div className="min-h-screen bg-[var(--color-background)]">
       {/* Header */}
-      <header className="border-b border-[var(--color-border)] bg-[var(--color-background)] sticky top-0 z-10 backdrop-blur">
+      <header className="border-b border-[var(--color-border)] bg-[var(--color-background)]">
         <div className="container mx-auto px-6 py-8">
-          <div className="flex items-center justify-between">
-            <div>
-              <h1 className="text-4xl font-bold text-[var(--color-text-primary)] mb-2">
-                UI Kit — Components & Design Tokens
-              </h1>
-              <p className="text-lg text-[var(--color-text-secondary)]">
-                Complete showcase of reusable components and 137 design tokens | Current theme: <span className="font-semibold text-[var(--color-primary)]">{theme}</span>
-              </p>
-            </div>
-            <ThemeToggle theme={theme} onToggle={setTheme} />
+          <div>
+            <h1 className="text-4xl font-bold text-[var(--color-text-primary)] mb-2">
+              UI Kit — Components & Design Tokens
+            </h1>
+            <p className="text-lg text-[var(--color-text-secondary)]">
+              Complete showcase of reusable components and 137 design tokens | Current theme: <span className={`font-semibold ${theme === 'dark' ? 'text-[var(--color-accent)]' : 'text-[var(--color-primary)]'}`}>{theme}</span>
+            </p>
           </div>
         </div>
       </header>
@@ -198,6 +198,140 @@ export default function UIKitPage() {
                   title="Without Icon"
                   description="Cards work great without icons too, focusing on text content."
                 />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ============================================
+            Navigation Section
+            ============================================ */}
+        <section>
+          <h2 className="text-3xl font-bold text-[var(--color-text-primary)] mb-6">
+            Navigation
+          </h2>
+          <p className="text-lg text-[var(--color-text-secondary)] mb-8">
+            Reusable navigation component used in Header, Footer, and mobile menu
+          </p>
+
+          <div className="space-y-8">
+            {/* Header Variant */}
+            <div>
+              <h3 className="text-xl font-semibold text-[var(--color-text-primary)] mb-4">
+                Header Navigation (with underline animation)
+              </h3>
+              <div className="bg-[var(--color-surface)] p-6 rounded-[2rem]">
+                <Navigation 
+                  items={SITE_NAVIGATION}
+                  variant="header"
+                  className="flex justify-center gap-8"
+                />
+              </div>
+            </div>
+
+            {/* Mobile Variant */}
+            <div>
+              <h3 className="text-xl font-semibold text-[var(--color-text-primary)] mb-4">
+                Mobile Navigation (with borders)
+              </h3>
+              <div className="bg-[var(--color-surface)] p-6 rounded-[2rem] max-w-sm">
+                <Navigation 
+                  items={SITE_NAVIGATION}
+                  variant="mobile"
+                  className="flex flex-col gap-2"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ============================================
+            Logos & Icons Section
+            ============================================ */}
+        <section>
+          <h2 className="text-3xl font-bold text-[var(--color-text-primary)] mb-6">
+            Logos & Icons
+          </h2>
+          <p className="text-lg text-[var(--color-text-secondary)] mb-8">
+            Brand logos and social media icons with theme support
+          </p>
+
+          <div className="space-y-8">
+            {/* Logos */}
+            <div>
+              <h3 className="text-xl font-semibold text-[var(--color-text-primary)] mb-4">
+                Brand Logos
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="bg-[var(--color-surface)] p-8 rounded-[2rem] flex flex-col items-center gap-4">
+                  <Image
+                    src="/logo.svg"
+                    alt="Fit&Lead Logo Light"
+                    width={206}
+                    height={54}
+                    className="h-12 w-auto"
+                  />
+                  <p className="text-sm text-[var(--color-text-secondary)]">Main Logo (Light theme)</p>
+                </div>
+                <div className="bg-[var(--color-surface)] p-8 rounded-[2rem] flex flex-col items-center gap-4">
+                  <Image
+                    src="/logo-dark.svg"
+                    alt="Fit&Lead Logo Dark"
+                    width={206}
+                    height={54}
+                    className="h-12 w-auto"
+                  />
+                  <p className="text-sm text-[var(--color-text-secondary)]">Yellow Logo (Dark theme)</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Social Icons */}
+            <div>
+              <h3 className="text-xl font-semibold text-[var(--color-text-primary)] mb-4">
+                Social Media Icons
+              </h3>
+              <div className="bg-[var(--color-surface)] p-8 rounded-[2rem]">
+                <div className="flex gap-4 justify-center">
+                  <div className="text-center space-y-2">
+                    <div className="flex justify-center">
+                      <Image
+                        src="/vk-icon.svg"
+                        alt="VK"
+                        width={34}
+                        height={34}
+                        className={theme === 'dark' ? 'brightness-0 invert' : ''}
+                      />
+                    </div>
+                    <p className="text-xs text-[var(--color-text-secondary)]">VKontakte</p>
+                  </div>
+                  <div className="text-center space-y-2">
+                    <div className="flex justify-center">
+                      <Image
+                        src="/tg-icon.svg"
+                        alt="Telegram"
+                        width={34}
+                        height={34}
+                        className={theme === 'dark' ? 'brightness-0 invert' : ''}
+                      />
+                    </div>
+                    <p className="text-xs text-[var(--color-text-secondary)]">Telegram</p>
+                  </div>
+                </div>
+                <p className="text-sm text-[var(--color-text-secondary)] text-center mt-4">
+                  Monochrome icons with theme-aware inversion (dark theme → white)
+                </p>
+              </div>
+            </div>
+
+            {/* Theme Toggle */}
+            <div>
+              <h3 className="text-xl font-semibold text-[var(--color-text-primary)] mb-4">
+                Theme Toggle
+              </h3>
+              <div className="bg-[var(--color-surface)] p-8 rounded-[2rem] flex flex-col items-center gap-4">
+                <ThemeToggle theme={theme} onToggle={setTheme} />
+                <p className="text-sm text-[var(--color-text-secondary)]">Current theme: <span className="font-semibold text-[var(--color-primary)]">{theme}</span></p>
               </div>
             </div>
           </div>
@@ -419,16 +553,28 @@ export default function UIKitPage() {
             ))}
           </div>
         </section>
-      </main>
 
-      {/* Footer */}
-      <footer className="border-t border-[var(--color-border)] bg-[var(--color-surface)] mt-16">
-        <div className="container mx-auto px-6 py-8">
-          <p className="text-center text-sm text-[var(--color-text-secondary)]">
-            UI Kit — Fit&Lead Design System | Built with Next.js + Tailwind CSS v4
+        {/* ============================================
+            Component Reusability Note
+            ============================================ */}
+        <section className="bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-primary)]/80 rounded-[2rem] p-12 text-center">
+          <h2 className="text-3xl font-bold text-white mb-4">
+            🎯 All Components Are Reused
+          </h2>
+          <p className="text-lg text-white/90 max-w-3xl mx-auto mb-6">
+            Every component shown here (Button, Card, Navigation, ThemeToggle) is the exact same component used on the Landing page. 
+            No duplicates, just props and variants. That's the power of component reusability!
           </p>
-        </div>
-      </footer>
+          <div className="flex gap-4 justify-center">
+            <Button variant="tonal" href="/">
+              View Landing Page
+            </Button>
+            <Button variant="tonal" href="https://github.com/waldfalke/fit-lead-test-assignment">
+              View on GitHub
+            </Button>
+          </div>
+        </section>
+      </main>
     </div>
   );
 }
