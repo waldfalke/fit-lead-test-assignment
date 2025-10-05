@@ -51,8 +51,7 @@ export const Header = React.forwardRef<HTMLElement, HeaderProps>(
         ref={ref}
         className={`
           ${sticky ? 'sticky top-0 z-[1020]' : ''}
-          backdrop-blur-[var(--backdrop-blur)]
-          bg-[var(--color-background)]/80
+          bg-[var(--color-background)]
           border-b border-[var(--color-border)]
           px-[var(--spacing-8)] py-[var(--spacing-6)]
           ${className}
